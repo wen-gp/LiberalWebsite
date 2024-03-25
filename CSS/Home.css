@@ -1,8 +1,27 @@
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
-  }
+}
+li{
+    position: relative;
+    margin-bottom: 25px;
+    margin-left: 6px;
+    line-height: 12px;
+}
+ul {  
+    list-style-type: none; /* 移除默认的列表标记 */  
+    padding-left: 15px; /* 为自定义标记留出空间 */  
+}  
+ul li::before {  
+    content: ''; 
+    display: inline-block;   
+    width: 6px; 
+    height: 6px; 
+    margin-right: 20px;
+    background-color: red; 
+}
 
 /* bunner */
 .bunner-container {
@@ -67,7 +86,6 @@ html, body {
     z-index: 10;
     font-weight: 400;
     text-decoration: none;
-    transition: color 0.5s ease;
 }
 
 .bunner-text-help-detail:hover {
@@ -90,7 +108,8 @@ html, body {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* 使用 Flexbox 布局使轮播项水平排列 */
+    display: flex;
+    /* 使用 Flexbox 布局使轮播项水平排列 */
     transition: transform 0.3s ease-in-out;
 }
 
@@ -135,8 +154,8 @@ html, body {
 .product-text-see-more:hover {
     color: #880000;
 }
-.product-module-container
-{
+
+.product-module-container {
     position: absolute;
     top: 25%;
     width: 300%;
@@ -144,8 +163,40 @@ html, body {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* 使用 Flexbox 布局使轮播项水平排列 */
-    transition: transform 0.3s ease-in-out; /* 添加过渡效果 */
+    display: flex;
+    /* 使用 Flexbox 布局使轮播项水平排列 */
+    transition: transform 0.3s ease-in-out;
+    /* 添加过渡效果 */
+}
+
+.product-module-text-detail-title {
+    position: absolute;
+    top: 1%;
+    font-size: 25px;
+    font-weight: 800;
+}
+#product-module-text-detail-title1{
+    left: 14%
+}
+#product-module-text-detail-title2{
+    left: 45.4%
+}
+#product-module-text-detail-title3{
+    left: 78.6%
+}
+.product-module-text-detail-item {
+    position: absolute;
+    top: 5%;
+    font-weight: 300;
+}
+#product-module-text-detail-item1 {
+    left: 13.5%
+}
+#product-module-text-detail-item2 {
+    left: 44.9%
+}
+#product-module-text-detail-item3 {
+    left: 78.1%
 }
 
 .prev,

@@ -10,8 +10,19 @@ function initHeaders() {
     header.style.left = 0;
     header.style.transition = "box-shadow 0.3s, height 0.3s, background 0.3s";
     header.classList.add("scrolled");
+    header.style.zIndex = 100;
+
+    let logo = document.createElement('img');
+    logo.src = '../Images/logo2.png';
+    logo.width = 50;
+    logo.height = 50;
+    logo.style.position = "absolute";
+    logo.style.left = "8%";
+    logo.style.top = "15%";
+    header.appendChild(logo);
+
     //生成Home
-    let home = createElement("Home", "230px");
+    let home = createHeaderElement("Home", "230px");
     header.appendChild(home);
 
     document.body.appendChild(header);
@@ -34,7 +45,7 @@ function initHeaders() {
         }
     });
 }
-function createElement(text, left) {
+function createHeaderElement(text, left) {
     let element = document.createElement('div');
     element.innerText = text;
     element.style.color = "white";
@@ -43,6 +54,7 @@ function createElement(text, left) {
     element.style.position = "fixed";
     element.style.left = left;
     element.style.top = "25px";
+    element.style.zIndex = 101;
     element.addEventListener("mouseover", function () {
         this.style.color = "red";
     });
