@@ -1,0 +1,29 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Create Black Div with JavaScript</title>  
+</head>  
+<body>  
+  
+<script>  
+  // 创建一个新的 div 元素  
+  let blackDiv = document.createElement('div');  
+  
+  // 设置 div 的样式  
+  blackDiv.style.width = '100%';       // 设置宽度  
+  blackDiv.style.height = '100%';      // 设置高度  
+  blackDiv.style.backgroundColor = 'black'; // 设置背景颜色为黑色  
+  
+  // 可选：添加一些其他样式  
+  blackDiv.style.position = 'absolute'; // 设置定位方式，以便看到效果（否则它可能不在可视区域内）  
+  blackDiv.style.top = '0px';          // 设置距离顶部的位置  
+  blackDiv.style.left = '0px';         // 设置距离左侧的位置  
+  
+  // 将新创建的 div 添加到 body 元素中  
+  document.body.appendChild(blackDiv);  
+</script>  
+  
+</body>  
+</html>
