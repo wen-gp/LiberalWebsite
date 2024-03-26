@@ -1,12 +1,13 @@
 initFooter();
 function initFooter() {
-    let footer = document.createElement('span');
+    let footer = document.createElement('div');
     footer.id = "footer";
     footer.style.width = "100%";
     footer.style.height = "70%";
     footer.style.backgroundColor = "black";
-    footer.style.position = "absolute";
-    footer.style.left = 0;
+    footer.style.position = "relative";
+    // footer.style.bottom = 0;
+    // footer.style.left = 0;
     document.body.appendChild(footer);
 
     //#region logo
