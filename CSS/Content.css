@@ -1,0 +1,161 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.content-title {
+    position: absolute;
+    left: 8%;
+    top: 24%;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.content-invite-title {
+    position: absolute;
+    left: 8%;
+    top: 35%;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.content-invite-description {
+    position: absolute;
+    left: 8%;
+    top: 45%;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 12px;
+}
+
+.content-item {
+    position: absolute;
+    left: 8%;
+    width: 50%;
+}
+
+.icon {
+    width: 10%;
+    height: 10%;
+    object-fit: cover;
+}
+
+.content-icon-description {
+    font-size: 15px;
+    font-weight: 200;
+    position: absolute;
+    left: 1%;
+    top: 95%;
+}
+
+.content-icon-description1 {
+    font-size: 15px;
+    font-weight: 200;
+    position: absolute;
+    left: 3%;
+    top: 95%;
+}
+
+.content-icon-description2 {
+    font-size: 15px;
+    font-weight: 200;
+    position: absolute;
+    left: 2%;
+    top: 95%;
+}
+
+.content-item-description {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 12px;
+    position: absolute;
+    left: 10%;
+    top: 15%;
+}
+
+.content-item-description1 {
+    font-size: 15px;
+    font-weight: 400;
+    position: absolute;
+    left: 10%;
+    top: 35%;
+}
+
+#content-item1 {
+    top: 55%;
+}
+
+#content-item2 {
+    top: 70%;
+}
+
+#content-item3 {
+    top: 85%;
+}
+
+#content-item4 {
+    top: 100%;
+}
+
+#content-item5 {
+    top: 115%;
+}
+
+
+.content-submit-container {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    width: 40%;
+    height: 75%;
+    background-color: #f8f8f8;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+}
+.content-submit-title{
+    font-size: 30px;
+    font-weight: 500;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+}
+.content-submit-description
+{
+    font-size: 15px;
+    font-weight: 300;
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    line-height: 12px;
+}
+.contact-form textarea {
+    position: absolute;
+    left: 10%;
+    height: 20%;
+    width: 80%;
+    resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+    background-color: #ec3f33;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+    position: absolute;
+    left: 10%;
+    top: 90%;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #3b0707;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}

@@ -3,27 +3,94 @@
 <head>  
 <meta charset="UTF-8">  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>Create Black Div with JavaScript</title>  
+<title>提交信息框</title>  
+<style>  
+  body {  
+    font-family: Arial, sans-serif;  
+    margin: 0;  
+    padding: 20px;  
+    background-color: #f4f4f4;  
+  }  
+  
+  .contact-form {  
+    max-width: 600px;  
+    margin: 0 auto;  
+    background-color: #fff;  
+    padding: 30px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+  }  
+  
+  .contact-form input[type="text"],  
+  .contact-form input[type="email"],  
+  .contact-form input[type="tel"],  
+  .contact-form select,  
+  .contact-form textarea {  
+    width: 100%;  
+    padding: 10px;  
+    margin-bottom: 20px;  
+    border-radius: 5px;  
+    border: 1px solid #ccc;  
+  }  
+  
+  .contact-form textarea {  
+    height: 150px;  
+    resize: vertical;  
+  }  
+  
+  .contact-form button[type="submit"] {  
+    background-color: #4CAF50;  
+    color: white;  
+    padding: 10px 20px;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+    float: right;  
+  }  
+  
+  .contact-form button[type="submit"]:hover {  
+    background-color: #45a049;  
+  }  
+  
+  .contact-form label {  
+    display: block;  
+    margin-bottom: 5px;  
+  }  
+</style>  
 </head>  
 <body>  
   
-<script>  
-  // 创建一个新的 div 元素  
-  let blackDiv = document.createElement('div');  
+<div class="contact-form">  
+  <form action="#" method="post">  
+    <label for="first-name">First Name:</label>  
+    <input type="text" id="first-name" name="first-name" required>  
   
-  // 设置 div 的样式  
-  blackDiv.style.width = '100%';       // 设置宽度  
-  blackDiv.style.height = '100%';      // 设置高度  
-  blackDiv.style.backgroundColor = 'black'; // 设置背景颜色为黑色  
+    <label for="last-name">Last Name:</label>  
+    <input type="text" id="last-name" name="last-name" required>  
   
-  // 可选：添加一些其他样式  
-  blackDiv.style.position = 'absolute'; // 设置定位方式，以便看到效果（否则它可能不在可视区域内）  
-  blackDiv.style.top = '0px';          // 设置距离顶部的位置  
-  blackDiv.style.left = '0px';         // 设置距离左侧的位置  
+    <label for="email">Email Address:</label>  
+    <input type="email" id="email" name="email" required>  
   
-  // 将新创建的 div 添加到 body 元素中  
-  document.body.appendChild(blackDiv);  
-</script>  
+    <label for="phone">Phone Number:</label>  
+    <input type="tel" id="phone" name="phone" required>  
+  
+    <label for="country">Country:</label>  
+    <select id="country" name="country">  
+      <option value="">-- Select a country --</option>  
+      <option value="USA">USA</option>  
+      <option value="Canada">Canada</option>  
+      <option value="UK">UK</option>  
+      <!-- Add more options as needed -->  
+    </select>  
+  
+    <label for="company">Company:</label>  
+    <input type="text" id="company" name="company" required>  
+  
+    <label for="message">Message:</label>  
+    <textarea id="message" name="message" required></textarea>  
+  
+    <button type="submit">Submit</button>  
+  </form>  
+</div>  
   
 </body>  
 </html>

@@ -37,7 +37,7 @@ function initHeaders() {
             home.style.color = "black"
         } else {
             header.style.height = "70px";
-            header.style.background = "rgba(255, 255, 255, 0)";
+            header.style.background = "rgba(0, 0, 0, 0.3)";
             header.style.boxShadow = "";
 
             home.style.top = "25px";
