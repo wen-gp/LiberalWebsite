@@ -11,10 +11,11 @@ body {
     height: 100vh;
     max-width: 100%;
     position: relative;
-    top:24%;
+    top: 24%;
     margin-bottom: 15%;
     overflow: hidden;
 }
+
 .content-title {
     position: absolute;
     left: 8%;
@@ -93,23 +94,23 @@ body {
 }
 
 #content-item1 {
-    top: 30%;
+    top: 27%;
 }
 
 #content-item2 {
-    top: 45%;
+    top: 42%;
 }
 
 #content-item3 {
-    top: 60%;
+    top: 57%;
 }
 
 #content-item4 {
-    top: 75%;
+    top: 72%;
 }
 
 #content-item5 {
-    top: 90%;
+    top: 86%;
 }
 
 
