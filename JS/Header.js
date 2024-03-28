@@ -24,9 +24,9 @@ function initHeaders() {
     header.appendChild(logo);
 
     let elements = [];
-    createHeaderElement(elements, header, "Home", "230px", "./Home.html");
-    createHeaderElement(elements, header, "About", "330px", "./About.html");
-    createHeaderElement(elements, header, "Content", "430px", "./Content.html");
+    createHeaderElement(elements, header, "Home", "230px", "../HTML/Home.html");
+    createHeaderElement(elements, header, "About", "330px", "../HTML/About.html");
+    createHeaderElement(elements, header, "Content", "430px", "../HTML/Content.html");
 
     window.addEventListener("scroll", function () {
         if (window.scrollY > 0) {
