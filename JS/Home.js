@@ -1,51 +1,50 @@
-let bunnerIndex = 0;
-let bunners = document.querySelectorAll('.bunner');
+class Home {
+    #bunnerIndex = 0;
+    #bunners = document.querySelectorAll('.bunner');
+    #productContainer = document.querySelector('.product-container');
+    #productList = document.querySelector('.product-module-container');
+    #productItems = document.querySelectorAll('.product');
+    #productItemWidth = this.#productContainer.offsetWidth;
+    #offset = 0;
 
-const productContainer = document.querySelector('.product-container');
-const productList = document.querySelector('.product-module-container');
-const productItems = document.querySelectorAll('.product');
-const productItemWidth = productContainer.offsetWidth;
-let offset = 0;
-let productIndex = 1;
+    //bunner
+    showBunners() {
+        this.showBunnerItem(this.#bunnerIndex);
+        setInterval(() =>  { this.showBunnerItem(this.#bunnerIndex += 1); }, 5000);
+    }
+    changeBunner(n) {
+        this.showBunnerItem(this.#bunnerIndex += 1);
+    }
+    showBunnerItem(n) {
+        if (n > this.#bunners.length - 1) {
+            this.#bunnerIndex = 0;
+        }
+        if (n < 0) {
+            this.#bunnerIndex = this.#bunners.length - 1;
+        }
+        for (let i = 0; i < this.#bunners.length; i++) {
+            this.#bunners[i].style.opacity = 0;
+        }
+        this.#bunners[this.#bunnerIndex].style.opacity = 1;
+    }
 
-showBunners();
-showProducts();
+    //product
+    showProducts() {
+        this.#productItems.forEach(item => {
+            item.style.width = `${this.#productItemWidth}px`;
+        });
+        setInterval(() => { this.changeProduct(1); }, 3000);
+    }
+    changeProduct(n) {
+        this.#offset -= n * this.#productItemWidth;
+        if (this.#offset < -(this.#productItemWidth * (this.#productItems.length - 1))) {
+            this.#offset = 0;
+        }
+        else if (this.#offset > 0) {
+            this.#offset = -(this.#productItemWidth * (this.#productItems.length - 1));
+        }
+        this.#productList.style.transform = `translateX(${this.#offset}px)`;
+    }
 
-//bunner
-function showBunners() {
-    showBunnerItem(bunnerIndex);
-    setInterval(function () { showBunnerItem(bunnerIndex += 1); }, 5000);
-}
-function changeBunner(n) {
-    showBunnerItem(bunnerIndex += 1);
-}
-function showBunnerItem(n) {
-    if (n > bunners.length - 1) {
-        bunnerIndex = 0;
-    }
-    if (n < 0) {
-        bunnerIndex = bunners.length - 1;
-    }
-    for (let i = 0; i < bunners.length; i++) {
-        bunners[i].style.opacity = 0;
-    }
-    bunners[bunnerIndex].style.opacity = 1;
 }
 
-//product
-function showProducts() {
-    productItems.forEach(item => {
-        item.style.width = `${productItemWidth}px`;
-    });
-    setInterval(function () { changeProduct(1); }, 3000);
-}
-function changeProduct(n) {
-    offset -= n * productItemWidth;
-    if (offset < -(productItemWidth * (productItems.length - 1))) {
-        offset = 0;
-    }
-    else if (offset > 0) {
-        offset = -(productItemWidth * (productItems.length - 1));
-    }
-    productList.style.transform = `translateX(${offset}px)`;
-}

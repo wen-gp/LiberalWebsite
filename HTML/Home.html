@@ -79,14 +79,25 @@
                 </ul>
             </div>
         </div>
-        <div class="prev" onclick="changeProduct(-1)">&#10096;</div>
-        <div class="next" onclick="changeProduct(1)">&#10097;</div>
+        <div class="prev" onclick="new Home().changeProduct(-1)">&#10096;</div>
+        <div class="next" onclick="new Home().changeProduct(1)">&#10097;</div>
     </div>
 
     <!-- code -->
     <script src="../JS/Header.js"></script>
     <script src="../JS/Home.js"></script>
     <script src="../JS/Footer.js"></script>
+    <script>
+        let header = new Header()
+        header.initHeaders();
+
+        let home = new Home();
+        home.showBunners();
+        home.showProducts();
+
+        let footer = new Footer()
+        footer.initFooter();
+    </script>
 </body>
 
 </html>
