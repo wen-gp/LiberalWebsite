@@ -213,9 +213,9 @@ class Header {
     }
 }
 class Product {
-    constructor(_level1, _level2) {
-        this.level1 = _level1;
-        this.level2 = _level2;
+    constructor(level1, level2) {
+        this.level1 = level1;
+        this.level2 = level2;
     }
     level1;
     level2 = [];
