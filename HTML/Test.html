@@ -69,23 +69,25 @@
     <button class="carousel-button left">&#10094;</button>
     <div class="carousel-slide">
       <!-- Replace with your images -->
-      <img src="../Images/产品模块1.webp" class="carousel-image" alt="Image 1">
-      <img src="../Images/产品模块2.webp" class="carousel-image" alt="Image 2">
-      <img src="../Images/产品模块3.webp" class="carousel-image" alt="Image 3">
+      <img src="../Images/产品模块1.webp" class="carousel-image">
+      <img src="../Images/产品模块2.webp" class="carousel-image">
+      <img src="../Images/产品模块3.webp" class="carousel-image">
       <!-- ... -->
     </div>
     <button class="carousel-button right">&#10095;</button>
     <div class="thumbnail-container">
       <!-- 缩略图列表，data-slide-index 属性用于标识对应的幻灯片索引 -->
-      <img src="../Images/产品模块1.webp" class="thumbnail" alt="Thumbnail 1" data-slide-index="0">
-      <img src="../Images/产品模块2.webp" class="thumbnail" alt="Thumbnail 2" data-slide-index="1">
-      <img src="../Images/产品模块3.webp" class="thumbnail" alt="Thumbnail 3" data-slide-index="2">
+      <img src="../Images/产品模块1.webp" class="thumbnail" data-slide-index="0">
+      <img src="../Images/产品模块2.webp" class="thumbnail" data-slide-index="1">
+      <img src="../Images/产品模块3.webp" class="thumbnail" data-slide-index="2">
       <!-- ... 更多缩略图 ... -->
     </div>
   </div>
 
   <script>
     
+
+
       var slideIndex = 0;
       var slides = document.querySelectorAll('.carousel-image');
       var slideWidth = slides[0].clientWidth;

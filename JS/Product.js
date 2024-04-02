@@ -1,88 +1,89 @@
-class Product{
-    productImgs = [];
-    productName;
-    description;
-    features = [];
-    parameters = [];
-    filePath;
-
-    create(){
-
-    }
-    #showProducts() {
-        this.#productItems.forEach(item => {
-            item.style.width = `${this.#productItemWidth}px`;
-        });
-        setInterval(() => { this.changeProduct(1); }, 3000);
-    }
-    #changeProduct(n) {
-        this.#offset -= n * this.#productItemWidth;
-        if (this.#offset < -(this.#productItemWidth * (this.#productItems.length - 1))) {
-            this.#offset = 0;
-        }
-        else if (this.#offset > 0) {
-            this.#offset = -(this.#productItemWidth * (this.#productItems.length - 1));
-        }
-        this.#productList.style.transform = `translateX(${this.#offset}px)`;
-    }
+class Feature {
+  title;
+  items;
 }
-class Feature{
-    title;
-    items;
-}
-class CarouselChart
-{
-    #slideIndex = 0;
-    #slides = document.querySelectorAll('.carousel-image');
-    #slideWidth = this.#slides[0].clientWidth;
-    #carouselSlide = document.querySelector('.carousel-slide');
-    #leftButton = document.querySelector('.carousel-button.left');
-    #rightButton = document.querySelector('.carousel-button.right');
-    #slideInterval = setInterval(nextSlide, 3000); // Change image every 3 seconds  
-    #sliding = false;
-
-    nextSlide() {
-      if (this.#sliding) return;
-      this.#sliding = true;
-      this.#slideIndex++;
-      if (this.#slideIndex >= this.#slides.length) {
-        this.#slideIndex = 0;
-      }
-      this.#carouselSlide.style.transform = 'translateX(-' + (this.#slideWidth * this.#slideIndex) + 'px)';
-      this.#sliding = false;
+class CarouselChart {
+  #slideIndex;
+  #slides = [];
+  #slideWidth;
+  #carouselSlide;
+  #sliding;
+  constructor()
+  {
+    this.#slideIndex = 0;
+    this.#sliding = false;
+  }
+  nextSlide() {
+    if (this.#sliding) return;
+    this.#sliding = true;
+    this.#slideIndex++;
+    if (this.#slideIndex >= this.#slides.length) {
+      this.#slideIndex = 0;
     }
+    this.#carouselSlide.style.transform = 'translateX(-' + (this.#slideWidth * this.#slideIndex) + 'px)';
+    this.#sliding = false;
+  }
 
-    prevSlide() {
-      if (this.#sliding) return;
-      this.#sliding = true;
-      this.#slideIndex--;
-      if (this.#slideIndex < 0) {
-        this.#slideIndex = this.#slides.length - 1;
-      }
-      this.#carouselSlide.style.transform = 'translateX(-' + (this.#slideWidth * this.#slideIndex) + 'px)';
-      this.#sliding = false;
+  prevSlide() {
+    if (this.#sliding) return;
+    this.#sliding = true;
+    this.#slideIndex--;
+    if (this.#slideIndex < 0) {
+      this.#slideIndex = this.#slides.length - 1;
     }
+    this.#carouselSlide.style.transform = 'translateX(-' + (this.#slideWidth * this.#slideIndex) + 'px)';
+    this.#sliding = false;
+  }
 
-    create()
-    {
-        this.#leftButton.addEventListener('click', prevSlide);
-        this.#rightButton.addEventListener('click', nextSlide);
-    
-        // Optionally, clear the interval on carousel hover to pause the slideshow  
-        carouselContainer = document.querySelector('.carousel-container');
-        carouselContainer.addEventListener('mouseenter', function () {
-          clearInterval(this.#slideInterval);
-        });
-        carouselContainer.addEventListener('mouseleave', function () {
-          this.#slideInterval = setInterval(nextSlide, 3000); // Restart the slideshow on mouse leave  
-        });
-        // 添加缩略图点击事件处理函数  
-        let thumbnails = document.querySelectorAll('.thumbnail');
-        thumbnails.forEach(function (thumbnail) {
-          thumbnail.addEventListener('click', function () {
-            let slideIndex = parseInt(this.getAttribute('data-slide-index'), 10);
-            this.#carouselSlide.style.transform = 'translateX(-' + (this.#slideWidth * this.#slideIndex) + 'px)';
-          });
-        });
+  create(imgPaths) {
+    let carouselContainer = document.createElement("div");
+    carouselContainer.style.position = "relative";
+    carouselContainer.style.width = "30%";
+    carouselContainer.style.height = "60%";
+    carouselContainer.style.overflow = "hidden";
+
+    this.#carouselSlide = document.createElement("div");
+    this.#carouselSlide.style.display = "flex";
+    this.#carouselSlide.style.transition = "transform 0.5s ease-in-out";
+    carouselContainer.appendChild(this.#carouselSlide);
+
+    for (let i = 0; i < imgPaths.length; i++) {
+      const imgPath = imgPaths[i];
+      let slide = document.createElement("img");
+      slide.style.width = "100%";
+      slide.style.flexShrink = "0";
+      slide.src = imgPath;
+      this.#carouselSlide.appendChild(slide);
+      this.#slides.push(slide);
     }
+    setTimeout(() => {  
+      if (this.#slides.length > 0) {  
+        this.#slideWidth = this.#slides[0].clientWidth;   
+      }  
+    }, 0);
+
+
+    let thumbnailContainer = document.createElement("div");
+    thumbnailContainer.style.display = "flex";
+    thumbnailContainer.style.justifyContent = "center";
+    thumbnailContainer.style.marginTop = "10px";
+    carouselContainer.appendChild(thumbnailContainer);
+
+    for (let i = 0; i < imgPaths.length; i++) {
+      const imgPath = imgPaths[i];
+      let thumbnail = document.createElement("img");
+      thumbnail.style.width = "10%";
+      thumbnail.style.height = "5%";
+      thumbnail.style.margin = "0 5px";
+      thumbnail.style.cursor = "pointer";
+      thumbnail.setAttribute('data-slide-index', i);
+      thumbnail.src = imgPath;
+      thumbnail.addEventListener('click', () => {
+        let slideIndex = parseInt(thumbnail.getAttribute('data-slide-index'), 10);
+        this.#carouselSlide.style.transform = 'translateX(-' + (this.#slideWidth * slideIndex) + 'px)';
+      });
+      thumbnailContainer.appendChild(thumbnail);
+    }
+    document.body.appendChild(carouselContainer);
+  }
 }
