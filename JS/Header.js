@@ -3,9 +3,9 @@ class Header {
     #elements = [];
     #products = [];
     constructor() {
-        this.#products.push(new Product("Infrared detectors", ["1", "2", "3"]));
-        this.#products.push(new Product("Infrared module", ["4", "5", "6", "7"]));
-        this.#products.push(new Product("Infrared movment", ["8", "9", "10"]));
+        this.#products.push(new ProductItem("Infrared detectors", ["1", "2", "3"]));
+        this.#products.push(new ProductItem("Infrared module", ["4", "5", "6", "7"]));
+        this.#products.push(new ProductItem("Infrared movment", ["8", "9", "10"]));
     }
     initHeaders() {
         this.#header.style.width = "100%";
@@ -212,7 +212,7 @@ class Header {
         }
     }
 }
-class Product {
+class ProductItem {
     constructor(level1, level2) {
         this.level1 = level1;
         this.level2 = level2;

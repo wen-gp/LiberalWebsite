@@ -1,3 +1,6 @@
+class Product{
+
+}
 class ProductCard {
     top;
     left;
