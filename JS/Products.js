@@ -127,8 +127,4 @@ class ProductCard {
             imgContainer.style.borderBottom = "2px solid rgba(0, 0, 0, 0.3)";
         });
     }
-    #GetDetail()
-    {
-        let productContainer = document.getElementsByClassName("product-container")[0];
-    }
 }

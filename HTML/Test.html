@@ -1,145 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Carousel</title>
-  <style>
-    .carousel-container {
-      position: relative;
-      width: 600px;
-      /* Adjust as needed */
-      overflow: hidden;
-    }
-
-    .carousel-slide {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .carousel-image {
-      width: 600px;
-      /* Adjust as needed */
-      flex-shrink: 0;
-    }
-
-    .carousel-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      z-index: 1000;
-    }
-
-    .carousel-button.left {
-      left: 10px;
-    }
-
-    .carousel-button.right {
-      right: 10px;
-    }
-
-    .thumbnail-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-      /* 根据需要调整间距 */
-    }
-
-    .thumbnail {
-      width: 70px;
-      /* 缩略图宽度，根据需要调整 */
-      height: 50px;
-      /* 缩略图高度，根据需要调整 */
-      margin: 0 5px;
-      /* 缩略图之间的间距 */
-      cursor: pointer;
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="carousel-container">
-    <button class="carousel-button left">&#10094;</button>
-    <div class="carousel-slide">
-      <!-- Replace with your images -->
-      <img src="../Images/产品模块1.webp" class="carousel-image">
-      <img src="../Images/产品模块2.webp" class="carousel-image">
-      <img src="../Images/产品模块3.webp" class="carousel-image">
-      <!-- ... -->
-    </div>
-    <button class="carousel-button right">&#10095;</button>
-    <div class="thumbnail-container">
-      <!-- 缩略图列表，data-slide-index 属性用于标识对应的幻灯片索引 -->
-      <img src="../Images/产品模块1.webp" class="thumbnail" data-slide-index="0">
-      <img src="../Images/产品模块2.webp" class="thumbnail" data-slide-index="1">
-      <img src="../Images/产品模块3.webp" class="thumbnail" data-slide-index="2">
-      <!-- ... 更多缩略图 ... -->
-    </div>
-  </div>
-
-  <script>
-    
-
-
-      var slideIndex = 0;
-      var slides = document.querySelectorAll('.carousel-image');
-      var slideWidth = slides[0].clientWidth;
-      var carouselSlide = document.querySelector('.carousel-slide');
-      var leftButton = document.querySelector('.carousel-button.left');
-      var rightButton = document.querySelector('.carousel-button.right');
-      var slideInterval = setInterval(nextSlide, 3000); // Change image every 3 seconds  
-      var sliding = false;
-
-      function nextSlide() {
-        if (sliding) return;
-        sliding = true;
-        slideIndex++;
-        if (slideIndex >= slides.length) {
-          slideIndex = 0;
-        }
-        carouselSlide.style.transform = 'translateX(-' + (slideWidth * slideIndex) + 'px)';
-        sliding = false;
-      }
-
-      function prevSlide() {
-        if (sliding) return;
-        sliding = true;
-        slideIndex--;
-        if (slideIndex < 0) {
-          slideIndex = slides.length - 1;
-        }
-        carouselSlide.style.transform = 'translateX(-' + (slideWidth * slideIndex) + 'px)';
-        sliding = false;
-      }
-
-      leftButton.addEventListener('click', prevSlide);
-      rightButton.addEventListener('click', nextSlide);
-
-      // Optionally, clear the interval on carousel hover to pause the slideshow  
-      var carouselContainer = document.querySelector('.carousel-container');
-      carouselContainer.addEventListener('mouseenter', function () {
-        clearInterval(slideInterval);
-      });
-      carouselContainer.addEventListener('mouseleave', function () {
-        slideInterval = setInterval(nextSlide, 3000); // Restart the slideshow on mouse leave  
-      });
-      // 添加缩略图点击事件处理函数  
-      var thumbnails = document.querySelectorAll('.thumbnail');
-      thumbnails.forEach(function (thumbnail) {
-        thumbnail.addEventListener('click', function () {
-          var slideIndex = parseInt(this.getAttribute('data-slide-index'), 10);
-          carouselSlide.style.transform = 'translateX(-' + (slideWidth * slideIndex) + 'px)';
-        });
-      });
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Create Table with JavaScript</title>  
+</head>  
+<body>  
+  
+<div id="tableContainer"></div>  
+  
+<script>  
+// 创建一个表格并添加到body中  
+function createTable() {  
+  // 创建table元素  
+  var table = document.createElement('table');  
+  table.style.width = '100%';  
+  table.style.borderCollapse = 'collapse';  
+  
+  // 循环创建行和列  
+  for (var i = 0; i < 4; i++) {  
+    var tr = document.createElement('tr');  
+      
+    for (var j = 0; j < 2; j++) {  
+      var td = document.createElement('td');  
+      td.style.border = '1px solid black';  
+      td.style.padding = '8px';  
+      td.textContent = `Row ${i + 1} Col ${j + 1}`; // 示例文本  
+      tr.appendChild(td);  
+    }  
+      
+    table.appendChild(tr);  
+  }  
+  
+  // 将表格添加到body中  
+  document.body.appendChild(table);  
+}  
+  
+// 调用函数创建一个3行4列的表格  
+createTable(); 
   </script>
-
-</body>
-
+  
+</body>  
 </html>
