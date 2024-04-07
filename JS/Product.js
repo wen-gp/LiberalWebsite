@@ -156,7 +156,6 @@ class Product {
         container.style.position = "relative";
         container.style.width = '90%';
         container.style.height = 'auto';
-        
         let table = document.createElement("table");
         table.style.width = '50%';
         table.style.borderCollapse = 'collapse';
@@ -199,7 +198,7 @@ class Product {
         element.style.display = 'inline-block';
         element.style.backgroundColor = 'red';
         element.style.color = 'white';
-        element.style.padding = '15px 30px';
+        element.style.padding = '20px 30px';
         element.style.borderRadius = '5px'; 
         element.style.alignItems = 'center'; 
         element.style.justifyContent = 'center';

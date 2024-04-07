@@ -1,0 +1,55 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.service-container {
+    width: 100%;
+    height: 300vh;
+    max-width: 100%;
+    position: relative;
+    top: 24%;
+    margin-bottom: 15%;
+    overflow: hidden;
+}
+
+.service-title {
+    position: absolute;
+    left: 8%;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.service-title-description {
+    position: absolute;
+    left: 8%;
+    top: 3%;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+#service1 {
+    position: absolute;
+    left: 8%;
+    top: 5%;
+    height: 21%;
+    width: 50%;
+}
+#service2 {
+    position: absolute;
+    left: 60%;
+    top: 5%;
+    height: 21%;
+    width: 50%;
+}
+
+#service-description {
+    position: absolute;
+    left: 60%;
+    top: 15%;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 14px;
+}
