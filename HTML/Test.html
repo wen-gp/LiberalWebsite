@@ -1,53 +1,112 @@
 <!DOCTYPE html>  
-<html>  
+<html lang="en">  
 <head>  
-  <title>Service Interface</title>  
-  <style>  
-    body {  
-      font-family: Arial, sans-serif;  
-      background-color: #f5f5f5;  
-    }  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>两级下拉菜单示例</title>  
+<style>
+  /* 基础样式 */  
+body {  
+    font-family: Arial, sans-serif;  
+}  
   
-    .container {  
-      max-width: 600px;  
-      margin: 0 auto;  
-      padding: 20px;  
-    }  
+nav ul {  
+    list-style-type: none;  
+    padding: 0;  
+    margin: 0;  
+}  
   
-    .service-title {  
-      font-size: 18px;  
-      font-weight: bold;  
-      margin-bottom: 10px;  
-    }  
+.dropdown-menu {  
+    background-color: #333;  
+}  
   
-    .service-description {  
-      line-height: 1.6;  
-    }  
+.dropdown-menu > li {  
+    display: inline-block;  
+    position: relative;  
+}  
   
-    .button {  
-      display: inline-block;  
-      padding: 10px 20px;  
-      background-color: #4CAF50;  
-      color: #fff;  
-      border-radius: 5px;  
-      text-decoration: none;  
-      margin-top: 10px;  
-    }  
-  </style>  
+.dropdown-menu > li > a {  
+    color: white;  
+    display: block;  
+    padding: 10px;  
+    text-decoration: none;  
+}  
+  
+.submenu {  
+    display: none;  
+    position: absolute;  
+    top: 100%;  
+    left: 0;  
+    background-color: #f9f9f9;  
+    min-width: 160px;  
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  
+    z-index: 1;  
+}  
+  
+.submenu li {  
+    position: relative; /* 使得三级菜单可以相对于此定位 */  
+}  
+  
+.submenu li a {  
+    color: black;  
+    padding: 8px 16px;  
+    text-decoration: none;  
+    display: block;  
+}  
+  
+.submenu li a:hover {  
+    background-color: #ddd;  
+}  
+  
+.submenu li:hover > .submenu {  
+    display: block;  
+}  
+  
+.dropdown-menu > li:hover > .submenu {  
+    display: block;  
+}  
+  
+/* 三级菜单样式，如果需要可以进一步自定义 */  
+.submenu .submenu {  
+    top: 0;  
+    left: 100%;  
+}
+</style>
 </head>  
 <body>  
-  <div class="container">  
-    <div class="service-box">  
-      <h2 class="service-title">Service 1</h2>  
-      <p class="service-description">This is a description of Service 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pede justo, condimentum, fringilla vnodesapit.</p>  
-      <a href="#" class="button">Learn More</a>  
-    </div>  
-    <div class="service-box">  
-      <h2 class="service-title">Service 2</h2>  
-      <p class="service-description">This is a description of Service 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pede justo, condimentum, fringilla vnodesapit.</p>  
-      <a href="#" class="button">Learn More</a>  
-    </div>  
-    <!-- Add more service boxes as needed -->  
-  </div>  
+  
+    <nav>  
+        <ul class="dropdown-menu">  
+            <li>  
+                <a href="#">菜单1</a>  
+                <ul class="submenu">  
+                    <li>  
+                        <a href="#">子菜单1-1</a>  
+                        <ul class="submenu">  
+                            <li><a href="#">子子菜单1-1-1</a></li>  
+                            <li><a href="#">子子菜单1-1-2</a></li>  
+                        </ul>  
+                    </li>  
+                    <li><a href="#">子菜单1-2</a></li>  
+                    <li><a href="#">子菜单1-3</a></li>  
+                </ul>  
+            </li>  
+            <li>  
+                <a href="#">菜单2</a>  
+                <ul class="submenu">  
+                    <li>  
+                        <a href="#">子菜单2-1</a>  
+                        <ul class="submenu">  
+                            <li><a href="#">子子菜单2-1-1</a></li>  
+                            <li><a href="#">子子菜单2-1-2</a></li>  
+                        </ul>  
+                    </li>  
+                    <li><a href="#">子菜单2-2</a></li>  
+                </ul>  
+            </li>  
+        </ul>  
+    </nav> 
+  
+<script src="script.js"></script>  
 </body>  
 </html>

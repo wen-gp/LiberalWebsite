@@ -135,6 +135,7 @@ class ProductCard {
 class ProductBuilder {
     #productCards = [
         {
+            type: "test1",
             card: new ProductCard("10%", "8%", "../Images/产品模块1.webp", "iGS412", "No shutter infrared movement", "382×288", "12μm", "<30mK"),
             product: new Product("GST212W",
                 "Wafer-Level-Package 256×192/12μm VOx Microbolometer Uncooled Thermal Detector Sensor",
@@ -181,7 +182,14 @@ class ProductBuilder {
     build() {
         for (let i = 0; i < this.#productCards.length; i++) {
             const productCard = this.#productCards[i];
-            productCard.card.create(productCard.product);
+            if (productCard.type == this.#getQueryParam('productType')) {
+                productCard.card.create(productCard.product);
+            }
         }
     }
+    #getQueryParam(name) {  
+        const search = window.location.search;  
+        const params = new URLSearchParams(search);  
+        return params.get(name);  
+    }  
 }

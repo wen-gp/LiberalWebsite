@@ -1,12 +1,12 @@
 class Header {
+    static productType;
     #header = document.createElement('div');
     #elements = [];
-    #products = [];
-    constructor() {
-        this.#products.push(new ProductItem("Infrared detectors", ["1", "2", "3"]));
-        this.#products.push(new ProductItem("Infrared module", ["4", "5", "6", "7"]));
-        this.#products.push(new ProductItem("Infrared movment", ["8", "9", "10"]));
-    }
+    #products = [
+        { level1 : "Infrared detectors", level2 : [ { display : "test1", type : "test1" } ] },
+        { level1 : "Infrared module", level2 : [ { display : "test2", type : "test1" } ] },
+        { level1 : "Infrared movment", level2 : [ { display : "test3", type : "test1" } ] }
+    ];
     initHeaders() {
         this.#header.style.width = "100%";
         this.#header.style.height = "70px";
@@ -180,7 +180,7 @@ class Header {
     #createComboBoxLevel2List(parent, left, list) {
         let curTop = 60;
         for (let i = 0; i < list.length; i++) {
-            let text = list[i];
+            let text = list[i].display;
             let comboItem = document.createElement('div');
 
             comboItem.innerText = text;
@@ -209,15 +209,11 @@ class Header {
                 this.style.background = "white";
                 this.style.color = "black";
             });
+            comboItem.addEventListener("click", function () {
+                Header.productType = list[i].type;
+                window.location.href = './Products.html?productType=' + encodeURIComponent(list[i].type);
+            });
             parent.appendChild(comboItem);
         }
     }
-}
-class ProductItem {
-    constructor(level1, level2) {
-        this.level1 = level1;
-        this.level2 = level2;
-    }
-    level1;
-    level2 = [];
 }
