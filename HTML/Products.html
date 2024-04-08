@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>products</title>
+    <title>Products</title>
     <link href="../CSS/Products.css" rel="stylesheet" />
 </head>
 
@@ -16,18 +16,15 @@
 
     <!-- code -->
     <script src="../JS/Header.js"></script>
+    <script src="../JS/Product.js"></script>
     <script src="../JS/Products.js"></script>
     <script src="../JS/Footer.js"></script>
     <script>
         let header = new Header()
         header.initHeaders();
 
-        let productCard = new ProductCard("10%", "8%","../Images/产品模块1.webp", "iGS412", "No shutter infrared movement", "382×288", "12μm", "<30mK");
-        productCard.create();
-        let productCard1 = new ProductCard("10%", "30%","../Images/产品模块1.webp", "iGS412", "No shutter infrared movement", "382×288", "12μm", "<30mK");
-        productCard1.create();
-        let productCard2 = new ProductCard("10%", "52%","../Images/产品模块1.webp", "iGS412", "No shutter infrared movement", "382×288", "12μm", "<30mK");
-        productCard2.create();
+        let productBuilder = new ProductBuilder();
+        productBuilder.build();
 
         let footer = new Footer()
         footer.initFooter();

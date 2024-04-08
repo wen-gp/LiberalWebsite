@@ -1,44 +1,53 @@
 <!DOCTYPE html>  
-<html lang="en">  
+<html>  
 <head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>Create Table with JavaScript</title>  
+  <title>Service Interface</title>  
+  <style>  
+    body {  
+      font-family: Arial, sans-serif;  
+      background-color: #f5f5f5;  
+    }  
+  
+    .container {  
+      max-width: 600px;  
+      margin: 0 auto;  
+      padding: 20px;  
+    }  
+  
+    .service-title {  
+      font-size: 18px;  
+      font-weight: bold;  
+      margin-bottom: 10px;  
+    }  
+  
+    .service-description {  
+      line-height: 1.6;  
+    }  
+  
+    .button {  
+      display: inline-block;  
+      padding: 10px 20px;  
+      background-color: #4CAF50;  
+      color: #fff;  
+      border-radius: 5px;  
+      text-decoration: none;  
+      margin-top: 10px;  
+    }  
+  </style>  
 </head>  
 <body>  
-  
-<div id="tableContainer"></div>  
-  
-<script>  
-// 创建一个表格并添加到body中  
-function createTable() {  
-  // 创建table元素  
-  var table = document.createElement('table');  
-  table.style.width = '100%';  
-  table.style.borderCollapse = 'collapse';  
-  
-  // 循环创建行和列  
-  for (var i = 0; i < 4; i++) {  
-    var tr = document.createElement('tr');  
-      
-    for (var j = 0; j < 2; j++) {  
-      var td = document.createElement('td');  
-      td.style.border = '1px solid black';  
-      td.style.padding = '8px';  
-      td.textContent = `Row ${i + 1} Col ${j + 1}`; // 示例文本  
-      tr.appendChild(td);  
-    }  
-      
-    table.appendChild(tr);  
-  }  
-  
-  // 将表格添加到body中  
-  document.body.appendChild(table);  
-}  
-  
-// 调用函数创建一个3行4列的表格  
-createTable(); 
-  </script>
-  
+  <div class="container">  
+    <div class="service-box">  
+      <h2 class="service-title">Service 1</h2>  
+      <p class="service-description">This is a description of Service 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pede justo, condimentum, fringilla vnodesapit.</p>  
+      <a href="#" class="button">Learn More</a>  
+    </div>  
+    <div class="service-box">  
+      <h2 class="service-title">Service 2</h2>  
+      <p class="service-description">This is a description of Service 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pede justo, condimentum, fringilla vnodesapit.</p>  
+      <a href="#" class="button">Learn More</a>  
+    </div>  
+    <!-- Add more service boxes as needed -->  
+  </div>  
 </body>  
 </html>

@@ -86,7 +86,7 @@ class Product {
         remark.style.fontWeight = 500;
         container.appendChild(remark);
 
-        if (features.length > 0) {
+        if (this.features.length > 0) {
             let featureTitle = document.createElement("div");
             featureTitle.innerText = "Main Features:";
             featureTitle.style.position = "absolute";

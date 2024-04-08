@@ -33,8 +33,9 @@ class Header {
 
         this.#createElement("Home", "230px", "../HTML/Home.html");
         this.#createComboBox("Products", "330px");
-        this.#createElement("About", "460px", "../HTML/About.html");
-        this.#createElement("Content", "560px", "../HTML/Content.html");
+        this.#createElement("Service", "460px", "../HTML/Service.html");
+        this.#createElement("About", "560px", "../HTML/About.html");
+        this.#createElement("Content", "660px", "../HTML/Content.html");
 
         this.#header.appendChild(logo);
         document.body.appendChild(this.#header);

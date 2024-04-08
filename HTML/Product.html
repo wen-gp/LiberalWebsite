@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>product</title>
+    <title>Product</title>
     <link href="../CSS/Product.css" rel="stylesheet" />
 </head>
 
@@ -52,8 +52,8 @@
         ];
         let carouselChartImgPaths = ["../Images/产品模块1.webp", "../Images/产品模块2.webp", "../Images/产品模块3.webp"];
         let applicationImgPaths = ["../Images/产品模块1.webp", "../Images/产品模块2.webp", "../Images/产品模块3.webp"];
-        let product = new Product("GST212W", "Wafer-Level-Package 256×192/12μm VOx Microbolometer Uncooled Thermal Detector Sensor", 
-            description, features, parameters, carouselChartImgPaths, applicationImgPaths, "../PDF/测试.pdf");
+        let remark = "Wafer-Level-Package 256×192/12μm VOx Microbolometer Uncooled Thermal Detector Sensor";
+        let product = new Product("GST212W", remark, description, features, parameters, carouselChartImgPaths, applicationImgPaths, "../PDF/测试.pdf");
         product.create();
 
         let footer = new Footer()
