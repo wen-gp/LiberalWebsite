@@ -129,7 +129,7 @@ body {
     width: calc(100% - 16%);
 }
 .about-data {
-    font-size: 60px;
+    font-size: 3.7rem;
     font-weight: 700;
     color: red;
 }
