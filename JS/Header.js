@@ -3,9 +3,18 @@ class Header {
     #header = document.createElement('div');
     #elements = [];
     #products = [
-        { level1 : "Infrared detectors", level2 : [ { display : "test1", type : "test1" } ] },
-        { level1 : "Infrared module", level2 : [ { display : "test2", type : "test1" } ] },
-        { level1 : "Infrared movment", level2 : [ { display : "test3", type : "test1" } ] }
+        { level1: "Infrared detectors", level2: [{ display: "test111111111", type: "test1" }] },
+        { level1: "Infrared module", level2: [{ display: "test2", type: "test1" }] },
+        { level1: "Visible light module", level2: [{ display: "test3", type: "test1" }] },
+        { level1: "Drone control chip", level2: [{ display: "test2", type: "test1" }] },
+        { level1: "Drone flight control chip", level2: [{ display: "test2", type: "test1" }] },
+        { level1: "inu", level2: [{ display: "test2", type: "test1" }] },
+        { level1: "Hand held observation", level2: [{ display: "test2", type: "test1" }] },
+        { level1: "Head mounted night vision device", level2: [{ display: "test2", type: "test1" }] },
+        { level1: "Thermal imaging sight", level2: [{ display: "test2", type: "test1" }] },
+        { level1: "FPV Drone", level2: [{ display: "test2", type: "test1" }] },
+        { level1: "Bulletproof helmet", level2: [{ display: "test2", type: "test1" }] },
+        { level1: "Bulletproof vest", level2: [{ display: "test2", type: "test1" }] },
     ];
     initHeaders() {
         this.#header.style.width = "100%";
@@ -91,129 +100,122 @@ class Header {
         return element;
     }
     #createComboBox(text, left) {
-        let element = document.createElement('a');
-        element.innerText = text + " >";
-        element.style.textDecoration = "none";
-        element.style.transition = "top 0.3s, color 0.3s";
-        element.style.color = "white";
-        element.style.cursor = "pointer";
-        element.style.position = "fixed";
-        element.style.left = left;
-        element.style.top = "25px";
-        element.style.zIndex = 101;
+        let ul = this.#createElementWithStyle("ul", {
+            listStyleType: "none",
+            padding: 0,
+            margin: 0,
+            color: "white",
+            cursor: "pointer",
+            position: "fixed",
+            top: "25px",
+            left: left,
+            width: "300px",
+            zIndex: 101,
+            transition: "top 0.3s, color 0.3s"
+        });
+        ul.innerText = text + " >";
 
-        this.#createComboBoxLevel1List(element, left);
+        for (let i = 0; i < this.#products.length; i++) {
+            const info = this.#products[i];
+            let level1 = this.#createElementWithStyle("li", {
+                listStyleType: "none",
+                position: "relative",
+                color: "black",
+                padding: "8px 16px",
+                background: "white",
+                display: "none"
+            });
+            level1.innerText = info.level1;
 
-        element.addEventListener("mouseover", function () {
+            let level2UL = this.#createElementWithStyle("ul", {
+                listStyleType: "none",
+                padding: 0,
+                margin: 0,
+                position: "absolute",
+                top: "0%",
+                left: "300px",
+                color: "black",
+                display: "none",
+                minWidth: "50px",
+                zIndex: 101,
+            });
+            for (let j = 0; j < info.level2.length; j++) {
+                let level2Info = info.level2[j];
+                let level2 = this.#createElementWithStyle("li", {
+                    listStyleType: "none",
+                    color: "black",
+                    padding: "8px 16px",
+                    background: "white",
+                    display: "none"
+                });
+                level2.innerText = level2Info.display;
+                level2UL.appendChild(level2);
+                level1.appendChild(level2UL);
+
+                level2.addEventListener("mouseover", function () {
+                    this.style.background = "#ddd";
+                });
+                level2.addEventListener("mouseout", function () {
+                    this.style.background = "white";
+                });
+                level2.addEventListener("click", function () {
+                    Header.productType = level2Info.type;
+                    window.location.href = './Products.html?productType=' + encodeURIComponent(level2Info.type);
+                });
+            }
+
+            level1.addEventListener("mouseover", function () {
+                this.style.background = "#ddd";
+                for (var i = 0; i < this.children.length; i++) {
+                    let child = this.children[i];
+                    child.style.display = "block";
+                    for (var j = 0; j < child.children.length; j++) {
+                        let child1 = child.children[j];
+                        child1.style.display = "block";
+                    }
+                }
+            });
+            level1.addEventListener("mouseout", function () {
+                this.style.background = "white";
+                for (var i = 0; i < this.children.length; i++) {
+                    let child = this.children[i];
+                    child.style.display = "none";
+                    for (var j = 0; j < child.children.length; j++) {
+                        let child1 = child.children[j];
+                        child1.style.display = "none";
+                    }
+                }
+            });
+            ul.appendChild(level1);
+        }
+
+        ul.addEventListener("mouseover", function () {
             this.style.color = "red";
-            for (let i = 0; i < element.children.length; i++) {
-                let child = element.children[i];
-                child.style.opacity = 1;
+            for (var i = 0; i < this.children.length; i++) {
+                let child = this.children[i];
+                child.style.display = "block";
             }
         });
-        element.addEventListener("mouseout", function () {
+        ul.addEventListener("mouseout", function () {
             if (window.scrollY > 0) {
                 this.style.color = "black"
             } else {
                 this.style.color = "white"
             }
-            for (let i = 0; i < element.children.length; i++) {
-                let child = element.children[i];
-                child.style.opacity = 0;
+            for (var i = 0; i < this.children.length; i++) {
+                let child = this.children[i];
+                child.style.display = "none";
             }
         });
-        this.#header.appendChild(element);
-        this.#elements.push(element);
+
+        this.#header.appendChild(ul);
+        this.#elements.push(ul);
     }
-    #createComboBoxLevel1List(parent, left) {
-        let curTop = 60;
-        for (let i = 0; i < this.#products.length; i++) {
-            let text = this.#products[i].level1;
-            let comboItem = document.createElement('div');
-            parent.appendChild(comboItem);
-
-            comboItem.innerText = text;
-            comboItem.style.background = "white";
-            comboItem.style.opacity = 0;
-            comboItem.style.zIndex = 101;
-            comboItem.style.height = "50px";
-            comboItem.style.width = "270px";
-            comboItem.style.position = "fixed";
-            comboItem.style.left = left;
-            comboItem.style.top = (curTop + 50 * i).toString() + "px";
-            comboItem.style.background = "white";
-            comboItem.style.transition = "opacity 0.5s ease-in-out";
-
-            comboItem.style.fontSize = "20px";
-            comboItem.style.fontWeight = "800";
-            comboItem.style.color = "black";
-            comboItem.style.display = 'flex';
-            comboItem.style.alignItems = 'center';
-            comboItem.style.paddingLeft = "30px";
-
-            let newStr = left.replace("px", "");
-            let leftNum = Number(newStr);
-            leftNum += 300;
-            let newLeft = leftNum.toString() + "px";
-            this.#createComboBoxLevel2List(comboItem, newLeft, this.#products[i].level2);
-
-            comboItem.addEventListener("mouseover", function () {
-                this.style.background = "rgba(0, 0, 0, 0.3)";
-                this.style.color = "white";
-
-                for (let i = 0; i < comboItem.children.length; i++) {
-                    let child = comboItem.children[i];
-                    child.style.opacity = 1;
-                }
-            });
-            comboItem.addEventListener("mouseout", function () {
-                this.style.background = "white";
-                this.style.color = "black";
-
-                for (let i = 0; i < comboItem.children.length; i++) {
-                    let child = comboItem.children[i];
-                    child.style.opacity = 0;
-                }
-            });
+    #createElementWithStyle(tagName, styleObject) {
+        const element = document.createElement(tagName);
+        for (let property in styleObject) {
+            element.style[property] = styleObject[property];
         }
-    }
-    #createComboBoxLevel2List(parent, left, list) {
-        let curTop = 60;
-        for (let i = 0; i < list.length; i++) {
-            let text = list[i].display;
-            let comboItem = document.createElement('div');
-
-            comboItem.innerText = text;
-            comboItem.style.background = "white";
-            comboItem.style.opacity = 0;
-            comboItem.style.zIndex = 101;
-            comboItem.style.height = "50px";
-            comboItem.style.width = "270px";
-            comboItem.style.position = "fixed";
-            comboItem.style.left = left;
-            comboItem.style.top = (curTop + 50 * i).toString() + "px";
-            comboItem.style.background = "white";
-            comboItem.style.transition = "opacity 0.5s ease-in-out";
-
-            comboItem.style.fontSize = "20px";
-            comboItem.style.fontWeight = "800";
-            comboItem.style.color = "black";
-            comboItem.style.display = 'flex';
-            comboItem.style.alignItems = 'center';
-            comboItem.style.paddingLeft = "30px";
-            comboItem.addEventListener("mouseover", function () {
-                this.style.background = "rgba(0, 0, 0, 0.3)";
-                this.style.color = "white";
-            });
-            comboItem.addEventListener("mouseout", function () {
-                this.style.background = "white";
-                this.style.color = "black";
-            });
-            comboItem.addEventListener("click", function () {
-                Header.productType = list[i].type;
-                window.location.href = './Products.html?productType=' + encodeURIComponent(list[i].type);
-            });
-            parent.appendChild(comboItem);
-        }
+        return element;
     }
 }

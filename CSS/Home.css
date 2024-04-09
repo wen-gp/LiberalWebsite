@@ -4,17 +4,17 @@ body {
     margin: 0;
     padding: 0;
 }
-li{
+.home-li{
     position: relative;
     margin-bottom: 25px;
     margin-left: 6px;
     line-height: 12px;
 }
-ul {  
+.product-module-text-detail-item {  
     list-style-type: none; /* 移除默认的列表标记 */  
     padding-left: 15px; /* 为自定义标记留出空间 */  
 }  
-ul li::before {  
+.product-module-text-detail-item .home-li::before {  
     content: ''; 
     display: inline-block;   
     width: 6px; 
