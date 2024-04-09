@@ -3,112 +3,36 @@
 <head>  
 <meta charset="UTF-8">  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>两级下拉菜单示例</title>  
-<style>
-  /* 基础样式 */  
-body {  
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}  
-  
-nav ul {  
-    list-style-type: none;  
-    padding: 0;  
-    margin: 0;  
-}  
-  
-.dropdown-menu {  
-    background-color: #333;  
-}  
-  
-.dropdown-menu > li {  
-    display: inline-block;  
-    position: relative;  
-}  
-  
-.dropdown-menu > li > a {  
-    color: white;  
-    display: block;  
-    padding: 10px;  
-    text-decoration: none;  
-}  
-  
-.submenu {  
-    display: none;  
-    position: absolute;  
-    top: 100%;  
-    left: 0;  
-    background-color: #f9f9f9;  
-    min-width: 160px;  
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  
-    z-index: 1;  
-}  
-  
-.submenu li {  
-    position: relative; /* 使得三级菜单可以相对于此定位 */  
-}  
-  
-.submenu li a {  
-    color: black;  
-    padding: 8px 16px;  
-    text-decoration: none;  
-    display: block;  
-}  
-  
-.submenu li a:hover {  
-    background-color: #ddd;  
-}  
-  
-.submenu li:hover > .submenu {  
-    display: block;  
-}  
-  
-.dropdown-menu > li:hover > .submenu {  
-    display: block;  
-}  
-  
-/* 三级菜单样式，如果需要可以进一步自定义 */  
-.submenu .submenu {  
-    top: 0;  
-    left: 100%;  
-}
-</style>
+<title>Flexbox Positioning Example</title>  
+<style>  
+  .flex-container {  
+    display: flex; /* 设置为Flex容器 */  
+    flex-direction:column;
+    justify-content: flex-start; /* 水平居中 */  
+    align-items: flex-start; /* 垂直居中 */  
+    height: 300px; /* 容器高度 */  
+  }  
+  .flex-item {  
+    padding: 20px;  
+    background-color: lightblue; /* 项目背景色 */  
+    margin: 10px; /* 项目外边距 */  
+  }  
+</style>  
 </head>  
 <body>  
-  
-    <nav>  
-        <ul class="dropdown-menu">  
-            <li>  
-                <a href="#">菜单1</a>  
-                <ul class="submenu">  
-                    <li>  
-                        <a href="#">子菜单1-1</a>  
-                        <ul class="submenu">  
-                            <li><a href="#">子子菜单1-1-1</a></li>  
-                            <li><a href="#">子子菜单1-1-2</a></li>  
-                        </ul>
-                    </li>  
-                    <li><a href="#">子菜单1-2</a></li>  
-                    <li><a href="#">子菜单1-3</a></li>  
-                </ul>  
-            </li>  
-            <li>  
-                <a href="#">菜单2</a>  
-                <ul class="submenu">  
-                    <li>  
-                        <a href="#">子菜单2-1</a>  
-                        <ul class="submenu">  
-                            <li><a href="#">子子菜单2-1-1</a></li>  
-                            <li><a href="#">子子菜单2-1-2</a></li>  
-                        </ul>  
-                    </li>  
-                    <li><a href="#">子菜单2-2</a></li>  
-                </ul>  
-            </li>  
-        </ul>  
-    </nav> 
-  
-<script src="script.js"></script>  
+  <div class="flex-container">  
+    <div class="flex-item">  
+      I am a flex item!  
+    </div>  
+    <div class="flex-item">  
+        I am a flex item!  
+      </div>  
+      <div class="flex-item">  
+        I am a flex item!  
+      </div>  
+      <div class="flex-item">  
+        I am a flex item!  
+      </div>  
+  </div>  
 </body>  
 </html>

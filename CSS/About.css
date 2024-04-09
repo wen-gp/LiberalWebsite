@@ -8,66 +8,61 @@ body {
 .about-container {
     width: 100%;
     height: 300vh;
-    max-width: 100%;
-    position: relative;
-    top: 24%;
-    margin-bottom: 15%;
-    overflow: hidden;
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: flex-start;
+    flex-direction:column;
 }
 
 .about-title {
-    position: absolute;
-    left: 8%;
-    font-size: 40px;
+    margin: 6% 0 0 8%;
+    font-size: 3.0rem;
     font-weight: 800;
 }
 
 .about-title-description {
-    position: absolute;
-    left: 8%;
-    top: 3%;
-    font-size: 25px;
+    margin: 0 0 0 8%;
+    font-size: 1.5rem;
     font-weight: 300;
 }
 
 #about1 {
-    position: absolute;
-    left: 8%;
-    top: 5%;
-    height: 21%;
-    width: 85%;
+    padding: 0% 8% 0% 8%;
+    height: 17%;
+    width: calc(100% - 16%);
 }
 
 #about-description {
-    position: absolute;
-    left: 8%;
-    top: 27%;
-    font-size: 15px;
+    height: 14%;
+    width: calc(100% - 16%);
+    padding: 0% 8% 0% 8%;
+    margin: 2% 0% 2% 0%;
+    font-size: 0.95rem;
     font-weight: 400;
-    line-height: 12px;
+    line-height: 3vh;
+    overflow: hidden;
 }
 
 #about2 {
-    position: absolute;
-    left: 8%;
-    top: 42%;
-    height: 25%;
-    width: 40%;
+    height: 100%;
+    width: 100%;
 }
 
 #about3 {
-    position: absolute;
-    left: 53%;
-    top: 42%;
-    height: 25%;
-    width: 40%;
+    height: 100%;
+    width: 100%;
 }
-
+#about-div {
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: flex-start;
+    flex-direction:row;
+    padding: 0% 8% 0% 8%;
+    width: calc(100% - 16%);
+}
 #about2-div {
-    position: absolute;
-    left: 8%;
-    top: 42%;
-    height: 25%;
+    position: relative;
+    height: 100%;
     width: 40%;
     background: rgba(0, 0, 0, 0);
     z-index: 10;
@@ -77,10 +72,9 @@ body {
 #about2-title {
     position: absolute;
     left: 8%;
-    /* top: 52%; */
     top: 76%;
     color: rgba(255, 255, 255, 1);
-    font-size: 30px;
+    font-size: 2.0rem;
     font-weight: 600;
     transition: color 0.3s ease-in-out, top 0.3s ease-in-out;
 }
@@ -90,16 +84,16 @@ body {
     left: 8%;
     top: 62%;
     color: rgba(255, 255, 255, 0);
-    font-size: 15px;
+    font-size: 1.0rem;
     font-weight: 500;
-    line-height: 12px;
+    line-height: 3vh;
     transition: color 0.3s ease-in-out;
+    width: 80%;
 }
 #about3-div {
-    position: absolute;
-    left: 53%;
-    top: 42%;
-    height: 25%;
+    position: relative;
+    margin: 0% 0% 0% 20%;
+    height: 100%;
     width: 40%;
     background: rgba(0, 0, 0, 0);
     z-index: 10;
@@ -108,10 +102,9 @@ body {
 #about3-title {
     position: absolute;
     left: 8%;
-    /* top: 52%; */
     top: 76%;
     color: rgba(255, 255, 255, 1);
-    font-size: 30px;
+    font-size: 2.0rem;
     font-weight: 600;
     transition: color 0.3s ease-in-out, top 0.3s ease-in-out;
 }
@@ -121,12 +114,20 @@ body {
     left: 8%;
     top: 22%;
     color: rgba(255, 255, 255, 0);
-    font-size: 15px;
+    font-size: 1.0rem;
     font-weight: 500;
-    line-height: 12px;
+    line-height: 3vh;
     transition: color 0.3s ease-in-out;
+    width: 80%;
 }
-
+.about-info-box {
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: flex-start;
+    flex-direction:row;
+    padding: 0% 8% 0% 8%;
+    width: calc(100% - 16%);
+}
 .about-data {
     font-size: 60px;
     font-weight: 700;
@@ -134,53 +135,31 @@ body {
 }
 
 .about-info {
-    font-size: 15px;
+    font-size: 1.0rem;
     font-weight: 300;
-    position: absolute;
-    left: 8%;
+    padding: 0% 8% 0% 8%;
 }
 
 .about-info-class {
-    position: absolute;
-    top: 69%;
-}
-
-#about-info1 {
-    left: 8%;
-}
-
-#about-info2 {
-    left: 28%;
-}
-
-#about-info3 {
-    left: 53%;
-}
-
-#about-info4 {
-    left: 73%;
+    margin: 2% 12% 0% 0%;
 }
 
 .about-our-client {
-    position: absolute;
-    left: 43%;
-    top: 75%;
-    font-size: 40px;
+    font-size: 3.0rem;
     font-weight: 800;
+    padding: 0% 0% 0% 40%;
+    margin: 5% 0% 0% 0%;
 }
 
 .about-our-client-description {
-    position: absolute;
-    left: 18%;
-    top: 78%;
-    font-size: 20px;
+    font-size: 1.2rem;
     font-weight: 300;
+    padding: 0% 0% 0% 19%;
+    margin: 2% 0% 0% 0%;
 }
 
 #our-client {
-    position: absolute;
-    left: 8%;
-    top: 80%;
-    height: 21%;
-    width: 85%;
+    height: 17%;
+    width: calc(100% - 16%);
+    padding: 5% 8% 0% 8%;
 }

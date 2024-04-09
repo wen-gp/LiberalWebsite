@@ -37,7 +37,7 @@ body {
     top: 20%;
     font-size: 15px;
     font-weight: 300;
-    line-height: 12px;
+    line-height: 2vh;
 }
 
 .content-item {
@@ -79,7 +79,7 @@ body {
 .content-item-description {
     font-size: 15px;
     font-weight: 400;
-    line-height: 12px;
+    line-height: 2vh;
     position: absolute;
     left: 10%;
     top: 15%;
@@ -141,7 +141,7 @@ body {
     position: absolute;
     left: 10%;
     top: 20%;
-    line-height: 12px;
+    line-height: 2vh;
 }
 
 .contact-form textarea {
