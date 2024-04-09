@@ -1,30 +1,32 @@
 class About{
     moveToImg()
     {
-        let element1 = document.getElementById("about2-div");
+        let elementAbout2 = document.getElementById("about2-div");
+        let element1 = document.getElementById("about-img1");
         let element2 = document.getElementById("about2-title");
         let element3 = document.getElementById("about2-description");
-        element1.addEventListener("mouseover", function () {
-            this.style.background = "rgba(0, 0, 0, 0.5)";
+        elementAbout2.addEventListener("mouseover", function () {
+            element1.style.filter = "brightness(50%)";
             element2.style.top = "52%";
             element3.style.color = "rgba(255, 255, 255, 1)";
         });
-        element1.addEventListener("mouseout", function () {
-            this.style.background = "rgba(0, 0, 0, 0)";
+        elementAbout2.addEventListener("mouseout", function () {
+            element1.style.filter = "brightness(100%)";
             element2.style.top = "76%";
             element3.style.color = "rgba(255, 255, 255, 0)";
         });
     
-        let element4 = document.getElementById("about3-div");
+        let elementAbout3 = document.getElementById("about3-div");
+        let element4 = document.getElementById("about-img2");
         let element5 = document.getElementById("about3-title");
         let element6 = document.getElementById("about3-description");
-        element4.addEventListener("mouseover", function () {
-            this.style.background = "rgba(0, 0, 0, 0.5)";
+        elementAbout3.addEventListener("mouseover", function () {
+            element4.style.filter = "brightness(50%)";
             element5.style.top = "10%";
             element6.style.color = "rgba(255, 255, 255, 1)";
         });
-        element4.addEventListener("mouseout", function () {
-            this.style.background = "rgba(0, 0, 0, 0)";
+        elementAbout3.addEventListener("mouseout", function () {
+            element4.style.filter = "brightness(100%)";
             element5.style.top = "76%";
             element6.style.color = "rgba(255, 255, 255, 0)";
         });

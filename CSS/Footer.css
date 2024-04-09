@@ -1,0 +1,55 @@
+#footer-box {
+    width: 100%;
+    height: 60%;
+    background: black;
+    padding-bottom: 2%;
+}
+
+#footer-logo {
+    width: 5%;
+    height: 5%;
+    margin: 4% 0 0 8%;
+}
+
+.footer-font {
+    font-size: 0.9rem;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.7)
+}
+
+#footer-company-introduction{
+    width: 20%;
+    height: 60%;
+    margin: 2% 0 0 8%;
+}
+
+#footer-content-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 1);
+    margin: 2% 0 0 7.6%;
+}
+#footer-content-detail-box{
+    width: calc(100% - 7.6%);
+    margin: 1% 0% 0 7.6%;
+}
+.footer-content-font{
+    font-size: 0.9rem;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.7);
+}
+.footer-content-item{
+    width: 150%;
+}
+#footer-line{
+    width: 85%;
+    height: 0.1px;
+    margin: 1% 0% 0 7.6%;
+    background: rgba(255, 255, 255, 0.7);
+}
+#english-name{
+    font-size: 0.9rem;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 1% 0% 0 7.6%;
+}
