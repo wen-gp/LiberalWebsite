@@ -1,38 +1,39 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>Flexbox Positioning Example</title>  
-<style>  
-  .flex-container {  
-    display: flex; /* 设置为Flex容器 */  
-    flex-direction:column;
-    justify-content: flex-start; /* 水平居中 */  
-    align-items: flex-start; /* 垂直居中 */  
-    height: 300px; /* 容器高度 */  
-  }  
-  .flex-item {  
-    padding: 20px;  
-    background-color: lightblue; /* 项目背景色 */  
-    margin: 10px; /* 项目外边距 */  
-  }  
-</style>  
-</head>  
-<body>  
-  <div class="flex-container">  
-    <div class="flex-item">  
-      I am a flex item!  
-    </div>  
-    <div class="flex-item">  
-        I am a flex item!  
-      </div>  
-      <div class="flex-item">  
-        I am a flex item!  
-      </div>  
-      <div class="flex-item">  
-        I am a flex item!  
-      </div>  
-  </div>  
-</body>  
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+  <link href="../CSS/Footer.css" rel="stylesheet" />
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- code -->
+  <script src="../JS/BoxCreator.js"></script>
+  <!-- <script src="../JS/Header.js"></script> -->
+  <script src="../JS/Footer.js"></script>
+  <script>
+    // let header = new Header()
+    // header.initHeaders();
+
+    let footer = new Footer()
+    footer.initFooter();
+  </script>
+</body>
+
 </html>

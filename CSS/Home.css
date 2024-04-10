@@ -1,9 +1,9 @@
 html,
 body {
     height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; 
 }
 .home-li{
     position: relative;
@@ -28,14 +28,13 @@ body {
 .bunner-container {
     width: 100%;
     height: 100%;
-    position: relative;
-    margin: auto;
     overflow: hidden;
 }
 
 .bunner {
     position: absolute;
     width: 100%;
+    height: 100%;
     text-align: center;
     opacity: 0;
     transition: opacity 3s ease;
@@ -43,14 +42,14 @@ body {
 
 .bunner img {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
 }
 
 .bunner-text-title {
     position: absolute;
     top: 20%;
-    left: 38.2%;
+    left: 16%;
     color: white;
     font-size: 3.5rem;
     z-index: 10;
@@ -60,7 +59,7 @@ body {
 .bunner-text-description {
     position: absolute;
     top: 30%;
-    left: 38.2%;
+    left: 16%;
     color: white;
     font-size: 1.3rem;
     z-index: 10;
@@ -70,7 +69,7 @@ body {
 .bunner-text-help-title {
     position: absolute;
     top: 40%;
-    left: 38.2%;
+    left: 16%;
     color: white;
     font-size: 1.3rem;
     z-index: 10;
@@ -80,7 +79,7 @@ body {
 .bunner-text-help-detail {
     position: absolute;
     top: 45%;
-    left: 38.2%;
+    left: 16%;
     color: white;
     font-size: 1.3rem;
     z-index: 10;
@@ -95,8 +94,7 @@ body {
 /* product */
 .product-container {
     width: 100%;
-    height: 100vh;
-    max-width: 100%;
+    height: 100%;
     position: relative;
     margin: auto;
     overflow: hidden;
@@ -109,7 +107,6 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
-    /* 使用 Flexbox 布局使轮播项水平排列 */
     transition: transform 0.3s ease-in-out;
 }
 
@@ -164,9 +161,7 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
-    /* 使用 Flexbox 布局使轮播项水平排列 */
     transition: transform 0.3s ease-in-out;
-    /* 添加过渡效果 */
 }
 
 .product-module-text-detail-title {

@@ -109,7 +109,6 @@ class Header {
             position: "fixed",
             top: "25px",
             left: left,
-            width: "300px",
             zIndex: 101,
             transition: "top 0.3s, color 0.3s"
         });
@@ -133,10 +132,9 @@ class Header {
                 margin: 0,
                 position: "absolute",
                 top: "0%",
-                left: "300px",
+                left: "100%",
                 color: "black",
                 display: "none",
-                minWidth: "50px",
                 zIndex: 101,
             });
             for (let j = 0; j < info.level2.length; j++) {

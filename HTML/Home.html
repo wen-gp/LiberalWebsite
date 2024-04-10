@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link href="../CSS/Footer.css" rel="stylesheet" />
     <link href="../CSS/Home.css" rel="stylesheet" />
 </head>
 
@@ -33,7 +34,6 @@
         </div>
         <div class="prev" onclick="changeBunner(-1)">&#10094;</div>
         <div class="next" onclick="changeBunner(1)">&#10095;</div>
-    </div>
     </div>
     <div class="product-container">
         <span class="product-text-title">Products</span>
@@ -84,6 +84,7 @@
     </div>
 
     <!-- code -->
+    <script src="../JS/BoxCreator.js"></script>
     <script src="../JS/Header.js"></script>
     <script src="../JS/Home.js"></script>
     <script src="../JS/Footer.js"></script>
@@ -93,10 +94,10 @@
 
         let home = new Home();
         home.showBunners();
-        home.showProducts();
+        // home.showProducts();
 
         let footer = new Footer()
-        footer.initFooter(document.body);
+        footer.initFooter();
     </script>
 </body>
 
