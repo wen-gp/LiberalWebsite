@@ -3,18 +3,18 @@ class Header {
     #header = document.createElement('div');
     #elements = [];
     #products = [
-        { level1: "Infrared detectors", level2: [{ display: "test111111111", type: "test1" }] },
+        { level1: "Infrared detectors", level2: [{ display: "test11111111", type: "test0" }] },
         { level1: "Infrared module", level2: [{ display: "test2", type: "test1" }] },
-        { level1: "Visible light module", level2: [{ display: "test3", type: "test1" }] },
-        { level1: "Drone control chip", level2: [{ display: "test2", type: "test1" }] },
-        { level1: "Drone flight control chip", level2: [{ display: "test2", type: "test1" }] },
-        { level1: "inu", level2: [{ display: "test2", type: "test1" }] },
-        { level1: "Hand held observation", level2: [{ display: "test2", type: "test1" }] },
-        { level1: "Head mounted night vision device", level2: [{ display: "test2", type: "test1" }] },
-        { level1: "Thermal imaging sight", level2: [{ display: "test2", type: "test1" }] },
-        { level1: "FPV Drone", level2: [{ display: "test2", type: "test1" }] },
-        { level1: "Bulletproof helmet", level2: [{ display: "test2", type: "test1" }] },
-        { level1: "Bulletproof vest", level2: [{ display: "test2", type: "test1" }] },
+        { level1: "Visible light module", level2: [{ display: "test3", type: "test2" }] },
+        { level1: "Drone control chip", level2: [{ display: "test2", type: "test" }] },
+        { level1: "Drone flight control chip", level2: [{ display: "test2", type: "test" }] },
+        { level1: "inu", level2: [{ display: "test2", type: "test" }] },
+        { level1: "Hand held observation", level2: [{ display: "test2", type: "test" }] },
+        { level1: "Head mounted night vision device", level2: [{ display: "test2", type: "test" }] },
+        { level1: "Thermal imaging sight", level2: [{ display: "test2", type: "test" }] },
+        { level1: "FPV Drone", level2: [{ display: "test2", type: "test" }] },
+        { level1: "Bulletproof helmet", level2: [{ display: "test2", type: "test" }] },
+        { level1: "Bulletproof vest", level2: [{ display: "test2", type: "test" }] },
     ];
     initHeaders() {
         this.#header.style.width = "100%";
