@@ -1,117 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Search Box Example</title>  
+    <style>
+        .search-container {  
+    position: relative;  
+}  
+  
+#search-input {  
+    width: 200px;  
+    padding: 8px;  
+}  
+  
+#search-button {  
+    position: absolute;  
+    right: 0;  
+    top: 0;  
+}
+    </style> 
+</head>  
+<body>  
+    <div class="search-container">  
+        <input type="text" id="search-input" placeholder="Search...">  
+        <button id="search-button">Search</button>  
+    </div>
     <script>
-        // 创建一个元素并设置其样式  
-function createElementWithStyle(tagName, styleObject) {  
-    const element = document.createElement(tagName);  
-    for (let property in styleObject) {  
-        element.style[property] = styleObject[property];  
-    }  
-    return element;  
-}  
-  
-// 创建链接元素  
-function createLink(text, href) {  
-    const a = createElementWithStyle('a', {  
-        color: 'white',  
-        display: 'block',  
-        padding: '10px',  
-        textDecoration: 'none'  
-    });  
-    a.href = href || '#';  
-    a.textContent = text;  
-    return a;  
-}  
-  
-// 创建子菜单  
-function createSubMenu(items) {  
-    const ul = createElementWithStyle('ul', {  
-        display: 'none',  
-        position: 'absolute',  
-        top: '100%',  
-        left: '0',  
-        backgroundColor: '#f9f9f9',  
-        minWidth: '160px',  
-        boxShadow: '0px 8px 16px 0px rgba(0,0,0,0.2)',  
-        zIndex: '1',  
-        listStyleType: 'none',  
-        padding: '0',  
-        margin: '0'  
-    });  
-    items.forEach(item => {  
-        if (typeof item === 'string') {  
-            const li = document.createElement('li');  
-            const a = createLink(item);  
-            li.appendChild(a);  
-            ul.appendChild(li);  
-        } else {  
-            const li = document.createElement('li');  
-            li.style.position = 'relative';  
-            const a = createLink(item.name);  
-            li.appendChild(a);  
-            if (item.submenu) {  
-                const submenu = createSubMenu(item.submenu);  
-                submenu.style.top = '0';  
-                submenu.style.left = '100%';  
-                li.appendChild(submenu);  
-            }  
-            ul.appendChild(li);  
-        }  
-    });  
-    return ul;  
-}  
-  
-// 创建主菜单项  
-function createMenuItem(text, subItems) {  
-    const li = createElementWithStyle('li', {  
-        display: 'inline-block',  
-        position: 'relative'  
-    });  
-    const a = createLink(text);  
-    li.appendChild(a);  
-    if (subItems) {  
-        const submenu = createSubMenu(subItems);  
-        li.appendChild(submenu);  
-        // 添加鼠标悬停事件以显示子菜单  
-        li.addEventListener('mouseover', function() {  
-            submenu.style.display = 'block';  
-        });  
-        li.addEventListener('mouseout', function() {  
-            submenu.style.display = 'none';  
-        });  
-    }  
-    return li;  
-}  
-  
-// 创建整个下拉菜单  
-function createDropdownMenu() {  
-    const ul = createElementWithStyle('ul', {  
-        listStyleType: 'none',  
-        padding: '0',  
-        margin: '0',  
-        backgroundColor: '#333'  
-    });  
-    const menu1 = createMenuItem('菜单1', [  
-        {  
-            name: '子菜单1-1',  
-            submenu: ['子子菜单1-1-1', '子子菜单1-1-2']  
-        },  
-        '子菜单1-2',  
-        '子菜单1-3'  
-    ]);  
-    ul.appendChild(menu1);  
-    return ul;  
-}  
-  
-// 将下拉菜单添加到body中  
-document.body.appendChild(createDropdownMenu());
+        // 假设您已经有了一个输入框元素inputElement 
     </script>
-</body>
+</body>  
 </html>
