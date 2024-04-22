@@ -117,11 +117,42 @@ class ProductCard {
 class ProductBuilder {
     #boxCreator = new BoxCreator();
     build() {
+        let origin = this.#getQueryParam('origin');
+        switch (origin) {
+            case "productMenu": this.#buildWhenProductMenuOrigin(); break;
+            case "search": this.#buildWhenSearchOrigin(); break;
+        }
+    }
+    #buildWhenProductMenuOrigin() {
         let n = 0;
         let box;
         for (let i = 0; i < productCards.length; i++) {
             const productCard = productCards[i];
             if (productCard.type == this.#getQueryParam('productType')) {
+                if (n == 0) {
+                    box = this.#boxCreator.createRowBox(document.body);
+                    box.style.width = "100%";
+                    box.style.height = `50vh`;
+                    box.style.margin = "4% 0% 4% 4%";
+                }
+                let c = productCard.card;
+                let card = new ProductCard(c.imgPath, c.name, c.description, c.resolution, c.pixelSize, c.netd);
+                card.create(box, productCard.product);
+                n++;
+                if (n == 4) {
+                    n = 0;
+                }
+            }
+        }
+    }
+    #buildWhenSearchOrigin() {
+        let n = 0;
+        let box;
+        for (let i = 0; i < productCards.length; i++) {
+            const productCard = productCards[i];
+            let json = JSON.stringify(productCard);
+            let searchText = this.#getQueryParam('p');
+            if (json.includes(searchText)) {
                 if (n == 0) {
                     box = this.#boxCreator.createRowBox(document.body);
                     box.style.width = "100%";
