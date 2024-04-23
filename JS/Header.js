@@ -602,7 +602,6 @@ class Header {
         box.style.position = "fixed";
         box.style.top = "20px";
         box.style.left = left;
-        // box.style.background = "pink";
         box.style.height = "30px";
         box.style.width = "230px";
         box.style.transition = "top 0.3s";
@@ -645,8 +644,8 @@ class Header {
         img.style.height = "107%";
         img.style.transition = "height 0.3s";
         img.style.background = "white";
-        img.addEventListener('click', function () {
-            alert("搜索中...");
+        img.addEventListener('click', () => {
+            this.#search(element.value);
         });
         img.addEventListener("mouseover", function () {
             img.src = '../Images/search1.png';
@@ -660,5 +659,8 @@ class Header {
         box.appendChild(img);
         this.#header.appendChild(box);
         return box;
+    }
+    #search(text){
+        window.location.href = './Products.html?origin=search&p=' + encodeURIComponent(text);
     }
 }
