@@ -32,6 +32,6 @@ class Footer {
         this.#boxCreator.createRowBox(footerBox, "", "footer-line");
 
         let englishName = this.#boxCreator.createRowBox(footerBox, "", "english-name");
-        englishName.innerText = "© 2022 YiWu liberal Co., Ltd.";
+        englishName.innerText = "© 2015 YiWu liberal Co., Ltd.";
     }
 }
