@@ -2,20 +2,7 @@ class Header {
     static productType;
     #header = document.createElement('div');
     #elements = [];
-    #products = [
-        { level1: "Infrared detectors", level2: [{ display: "test11111111", type: "test0" }] },
-        { level1: "Infrared module", level2: [{ display: "test2", type: "test1" }] },
-        { level1: "Visible light module", level2: [{ display: "test3", type: "test2" }] },
-        { level1: "Drone control chip", level2: [{ display: "test2", type: "test" }] },
-        { level1: "Drone flight control chip", level2: [{ display: "test2", type: "test" }] },
-        { level1: "inu", level2: [{ display: "test2", type: "test" }] },
-        { level1: "Hand held observation", level2: [{ display: "test2", type: "test" }] },
-        { level1: "Head mounted night vision device", level2: [{ display: "test2", type: "test" }] },
-        { level1: "Thermal imaging sight", level2: [{ display: "test2", type: "test" }] },
-        { level1: "FPV Drone", level2: [{ display: "test2", type: "test" }] },
-        { level1: "Bulletproof helmet", level2: [{ display: "test2", type: "test" }] },
-        { level1: "Bulletproof vest", level2: [{ display: "test2", type: "test" }] },
-    ];
+    // #products = [];
     initHeaders() {
         this.#header.style.width = "100%";
         this.#header.style.height = "70px";
@@ -117,8 +104,8 @@ class Header {
         });
         ul.innerText = text + " >";
 
-        for (let i = 0; i < this.#products.length; i++) {
-            const info = this.#products[i];
+        for (let i = 0; i < productTypes.length; i++) {
+            const info = productTypes[i];
             let level1 = this.#createElementWithStyle("li", {
                 listStyleType: "none",
                 position: "relative",
@@ -133,6 +120,7 @@ class Header {
                 listStyleType: "none",
                 padding: 0,
                 margin: 0,
+                width:"130%",
                 position: "absolute",
                 top: "0%",
                 left: "100%",
@@ -150,21 +138,74 @@ class Header {
                     display: "none"
                 });
                 level2.innerText = level2Info.display;
+
+                let level3UL = this.#createElementWithStyle("ul", {
+                    listStyleType: "none",
+                    padding: 0,
+                    margin: 0,
+                    width:"120%",
+                    position: "absolute",
+                    top: "0%",
+                    left: "100%",
+                    color: "black",
+                    display: "none",
+                    zIndex: 101,
+                });
+                for (let k = 0; k < level2Info.level3.length; k++) {
+                    let level3Info = level2Info.level3[k];
+                    let level3 = this.#createElementWithStyle("li", {
+                        listStyleType: "none",
+                        color: "black",
+                        padding: "8px 16px",
+                        background: "white",
+                        display: "none"
+                    });
+                    level3.innerText = level3Info.display;
+                    level3UL.appendChild(level3);
+                    level3.addEventListener("mouseover", function () {
+                        this.style.background = "#ddd";
+                    });
+                    level3.addEventListener("mouseout", function () {
+                        this.style.background = "white";
+                    });
+                    level3.addEventListener("click", function () {
+                        if (level3Info.type != "") {
+                            window.location.href = './Products.html?origin=productMenu&productType=' + encodeURIComponent(level3Info.type);
+                        }
+                    });
+                }
+                level2.appendChild(level3UL);
                 level2UL.appendChild(level2);
-                level1.appendChild(level2UL);
 
                 level2.addEventListener("mouseover", function () {
                     this.style.background = "#ddd";
+                    for (var i = 0; i < this.children.length; i++) {
+                        let child = this.children[i];
+                        child.style.display = "block";
+                        for (var j = 0; j < child.children.length; j++) {
+                            let child1 = child.children[j];
+                            child1.style.display = "block";
+                        }
+                    }
                 });
                 level2.addEventListener("mouseout", function () {
                     this.style.background = "white";
+                    for (var i = 0; i < this.children.length; i++) {
+                        let child = this.children[i];
+                        child.style.display = "none";
+                        for (var j = 0; j < child.children.length; j++) {
+                            let child1 = child.children[j];
+                            child1.style.display = "none";
+                        }
+                    }
                 });
                 level2.addEventListener("click", function () {
-                    Header.productType = level2Info.type;
-                    window.location.href = './Products.html?origin=productMenu&productType=' + encodeURIComponent(level2Info.type);
+                    if (level3Info.type != "") {
+                        window.location.href = './Products.html?origin=productMenu&productType=' + encodeURIComponent(level2Info.type);
+                    }
                 });
             }
-
+            level1.appendChild(level2UL);
             level1.addEventListener("mouseover", function () {
                 this.style.background = "#ddd";
                 for (var i = 0; i < this.children.length; i++) {
