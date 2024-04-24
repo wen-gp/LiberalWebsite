@@ -1,6 +1,6 @@
 let productCards = [
     {
-        "type": "Module",
+        "tags": ["Module", "Popular Products"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221110/1668064473968416.jpg",
             "name": "GST212W",
@@ -104,7 +104,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module", "Popular Products"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221110/1668067237576153.jpg",
             "name": "GST417W",
@@ -204,7 +204,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221110/1668067507657360.jpg",
             "name": "GST412C",
@@ -306,7 +306,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221110/1668068243801969.jpg",
             "name": "GST612W",
@@ -410,7 +410,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221110/1668068397241474.jpg",
             "name": "GST612C",
@@ -512,7 +512,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20230829/1693291566513151.jpg",
             "name": "GST417C",
@@ -610,7 +610,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221110/1668066630425977.jpg",
             "name": "GST417M",
@@ -712,7 +712,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221110/1668068711602814.jpg",
             "name": "GST612M",
@@ -814,7 +814,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221110/1668069405689671.jpg",
             "name": "GST817M",
@@ -916,7 +916,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221110/1668069626593955.jpg",
             "name": "GST1212M",
@@ -1018,7 +1018,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20231205/1701775670888471.jpg",
             "name": "GST612W9 automotive grade infrared detector",
@@ -1120,7 +1120,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221110/1668070447310492.jpg",
             "name": "C1212M",
@@ -1250,7 +1250,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221110/1668070698526554.jpg",
             "name": "C615M",
@@ -1390,7 +1390,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221110/1668071291418189.jpg",
             "name": "C330M",
@@ -1518,7 +1518,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221110/1668071481837293.jpg",
             "name": "C615S",
@@ -1644,7 +1644,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221110/1668071918864487.jpg",
             "name": "C330S",
@@ -1770,7 +1770,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221110/1668072019654443.jpg",
             "name": "C330S",
@@ -1892,7 +1892,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221110/1668072637681008.jpg",
             "name": "RS058",
@@ -2004,7 +2004,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221111/1668148166155999.jpg",
             "name": "RS079",
@@ -2110,7 +2110,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221111/1668149827391788.jpg",
             "name": "RS046",
@@ -2218,7 +2218,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221111/1668152097253905.jpg",
             "name": "LS734",
@@ -2324,7 +2324,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20230829/1693292438737615.jpg",
             "name": "LS713",
@@ -2426,7 +2426,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20231205/1701774100896521.jpg",
             "name": "TWIN1212 megapixels",
@@ -2606,7 +2606,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221101/1667273146965501.jpg",
             "name": "TIMO120",
@@ -2725,7 +2725,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221101/1667292073417011.jpg",
             "name": "COIN612",
@@ -2920,7 +2920,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221101/1667292881390168.jpg",
             "name": "COIN417G²",
@@ -3111,7 +3111,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221102/1667353405942229.jpg",
             "name": "TWIN612",
@@ -3273,7 +3273,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221102/1667353847770539.jpg",
             "name": "TWIN412",
@@ -3435,7 +3435,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221102/1667379319976927.jpg",
             "name": "PLUG617",
@@ -3618,7 +3618,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221104/1667532651391081.jpg",
             "name": "iLC212R",
@@ -3802,7 +3802,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221101/1667281457558062.jpg",
             "name": "TIMO256",
@@ -3918,7 +3918,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221102/1667377453565382.jpg",
             "name": "TIMO256AF",
@@ -4032,7 +4032,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221104/1667543251772440.jpg",
             "name": "iHA417",
@@ -4199,7 +4199,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221111/1668155074201962.jpg",
             "name": "iDAS384",
@@ -4361,7 +4361,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221114/1668397283517525.jpg",
             "name": "PLUG417",
@@ -4535,7 +4535,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221102/1667377707624191.jpg",
             "name": "PLUG612",
@@ -4691,7 +4691,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221102/1667374233967967.jpg",
             "name": "PLUG1212",
@@ -4871,7 +4871,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20230829/1693306603232828.jpg",
             "name": "iGS412",
@@ -5035,7 +5035,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221107/1667811410110349.jpg",
             "name": "C330M-G",
@@ -5169,7 +5169,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221107/1667811782969924.jpg",
             "name": "EYAS330G",
@@ -5287,7 +5287,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221107/1667812653561038.jpg",
             "name": "GAS330",
@@ -5437,7 +5437,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221107/1667809034590368.jpg",
             "name": "GAVIN330",
@@ -5588,7 +5588,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221114/1668407462285268.jpg",
             "name": "GAVIN615A",
@@ -5735,7 +5735,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221107/1667808203249228.jpg",
             "name": "GAVIN615B",
@@ -5883,7 +5883,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221107/1667810254889688.jpg",
             "name": "GAVIN615L",
@@ -6025,7 +6025,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221114/1668407353223322.jpg",
             "name": "GAVIN1212",
@@ -6175,7 +6175,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221114/1668406836691473.jpg",
             "name": "EYAS330",
@@ -6297,7 +6297,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221107/1667800622931348.jpg",
             "name": "EYAS615A",
@@ -6419,7 +6419,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221114/1668406583951644.jpg",
             "name": "EYAS615B",
@@ -6541,7 +6541,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221114/1668406926953224.jpg",
             "name": "EYAS615L",
@@ -6663,7 +6663,7 @@ let productCards = [
         }
     },
     {
-        "type": "Module",
+        "tags": ["Module"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221107/1667799695379740.jpg",
             "name": "EYAS1212",

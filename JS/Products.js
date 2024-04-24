@@ -128,7 +128,7 @@ class ProductBuilder {
         let box;
         for (let i = 0; i < productCards.length; i++) {
             const productCard = productCards[i];
-            if (productCard.type == this.#getQueryParam('productType')) {
+            if (productCard.tags.includes(this.#getQueryParam('productType'))) {
                 if (n == 0) {
                     box = this.#boxCreator.createRowBox(document.body);
                     box.style.width = "100%";

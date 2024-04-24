@@ -20,6 +20,17 @@ body {
     align-items: flex-start;
     flex-direction: column;
 }
+#wy-popular-product-types-container {
+    height: 20%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    background: rgb(216, 142, 142);
+}
 
 #wy-popular-products-carousel-chart__row-1 {
     height: 20%;
@@ -64,7 +75,7 @@ body {
     flex-direction: row;
 }
 
-.wy-popular-products-carousel-chart__card-container {
+#wy-popular-products-carousel-chart__card-container {
     height: 100%;
     width: 71%;
     margin: 0% 2% 0 2%;
@@ -72,7 +83,7 @@ body {
     overflow: hidden;
 }
 
-.wy-popular-products-carousel-chart__card-long-container {
+#wy-popular-products-carousel-chart__card-long-container {
     height: 100%;
     width: 200%;
     margin: 0;
@@ -81,7 +92,9 @@ body {
     align-items: flex-start;
     flex-direction: row;
 }
-
+.wy-popular-products-carousel-chart__card-long-container-move {
+    transition: transform 0.5s ease;
+}
 .wy-popular-products-carousel-chart__card-item {
     height: 100%;
     width: calc(100% / 8);
@@ -157,5 +170,49 @@ body {
     height: 100%;
     width: 21%;
     margin: 0% 2% 0 2%;
-    background: rgba(255, 255, 0, 0.39);
+    background: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+}
+#wy-popular-products-carousel-chart__choice-title {
+    width: 90%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 5% 5% 0 5%;
+    padding: 0;
+    color: black;
+    word-wrap: break-word;
+    overflow: auto;
+}
+#wy-popular-products-carousel-chart__choice-description {
+    width: 90%;
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 5% 5% 0 5%;
+    padding: 0;
+    color: black;
+    word-wrap: break-word;
+    overflow: auto;
+}
+#wy-popular-products-carousel-chart__choice-see-more {
+    height: 20%;
+    width: 70%;
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 5% 5% 0 5%;
+    background: rgb(243, 56, 56);
+    box-shadow: 0 0 10px rgb(132, 84, 84);
+    margin: 30% 0 0 15%;
+    padding: 0;
+    color: rgb(255, 255, 255);
+    word-wrap: break-word;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    cursor: pointer;
+}
+#wy-popular-products-carousel-chart__choice-see-more:hover {
+    background: rgb(56, 165, 243);
 }
