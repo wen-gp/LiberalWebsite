@@ -31,7 +31,7 @@ class Header {
         this.#createComboBox("Products", "330px");
         this.#createElement("Service", "460px", "../HTML/Service.html");
         this.#createElement("About", "560px", "../HTML/About.html");
-        this.#createElement("Content", "660px", "../HTML/Content.html");
+        this.#createElement("Contact", "660px", "../HTML/Contact.html");
         let searchBox = this.#createSearchElement("760px");
 
         this.#header.appendChild(logo);
@@ -263,7 +263,7 @@ class Header {
     #createSearchElement(left) {
         let box = document.createElement("div");
         box.style.display = "flex";
-        box.style.justifyContent = "flexStart";
+        box.style.justifyContact = "flexStart";
         box.style.alignItems = "flexStart";
         box.style.flexDirection = "row";
         box.style.position = "fixed";
