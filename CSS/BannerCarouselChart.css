@@ -1,0 +1,88 @@
+#wy-banner-carousel-chart {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#wy-banner-carousel-chart__banner-list-container {
+    height: 90%;
+    width: 500%;
+    margin: 0;
+    padding: 0;
+    transform: translateX(-20%);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.wy-banner-carousel-chart__banner-container {
+    height: 100%;
+    width: 20%;
+    margin: 0;
+    padding: 0;
+    position: relative;  
+}
+
+.wy-banner-carousel-chart__img {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.wy-banner-carousel-chart__content{
+    position: absolute; 
+    top: 20%; 
+    left: 10%; 
+    color: white; 
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* 可选：给文本添加阴影 */   
+}
+
+#wy-banner-carousel-chart__banner-selector {
+    height: 10%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.wy-banner-carousel-chart__icon {
+    width: 5%;
+    height: 100%;
+    margin: 0 0.5%;
+    padding: 0;
+    transition: box-shadow 0.3s ease;
+}
+
+.wy-banner-carousel-chart__icon:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.wy-banner-carousel-chart__banner-list-container-move{
+    transition: transform 0.5s ease;
+}
+.wy-banner-carousel-chart__banner-option {
+    width: 18%;
+    height: 91.87%;
+    margin: 0.13% 1% 8% 1%;
+    padding: 0;
+    transition: box-shadow 0.3s ease;
+    color: rgba(255, 255, 255, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.wy-banner-carousel-chart__banner-option:hover{
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
