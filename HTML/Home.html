@@ -61,7 +61,45 @@
         </div>
     </div>
     <!--热门产品类型-->
-    <div id="wy-popular-product-types-container"></div>
+    <div id="wy-popular-product-types-container">
+        <h1 id="wy-popular-product-type-title">Popular Product Types</h1>
+        <div class="wy-popular-product-types-container-row">
+            <div class="wy-popular-product-type-item" onclick="home.jumpToProducts('Popular Products')">
+                <img class="wy-popular-product-type-img" src="../Images/磁栅尺.png" alt="Magnetic grating ruler">
+                <p class="wy-popular-product-type-name">Magnetic grating ruler</p>
+            </div>
+            <div class="wy-popular-product-type-item" onclick="home.jumpToProducts('Popular Products')">
+                <img class="wy-popular-product-type-img" src="../Images/飞控单元.png" alt="Flight control unit">
+                <p class="wy-popular-product-type-name">Flight control unit</p>
+            </div>
+            <div class="wy-popular-product-type-item" onclick="home.jumpToProducts('Popular Products')">
+                <img class="wy-popular-product-type-img" src="../Images/工业连接器.png" alt="Industrial connectors">
+                <p class="wy-popular-product-type-name">Industrial connectors</p>
+            </div>
+            <div class="wy-popular-product-type-item" onclick="home.jumpToProducts('Popular Products')">
+                <img class="wy-popular-product-type-img" src="../Images/光栅尺.png" alt="Grating ruler">
+                <p class="wy-popular-product-type-name">Grating ruler</p>
+            </div>
+        </div>
+        <div class="wy-popular-product-types-container-row">
+            <div class="wy-popular-product-type-item" onclick="home.jumpToProducts('Popular Products')">
+                <img class="wy-popular-product-type-img" src="../Images/雷达.png" alt="Radar">
+                <p class="wy-popular-product-type-name">Radar</p>
+            </div>
+            <div class="wy-popular-product-type-item" onclick="home.jumpToProducts('Popular Products')">
+                <img class="wy-popular-product-type-img" src="../Images/热成像摄像头.png" alt="Thermal imaging camera">
+                <p class="wy-popular-product-type-name">Thermal imaging camera</p>
+            </div>
+            <div class="wy-popular-product-type-item" onclick="home.jumpToProducts('Popular Products')">
+                <img class="wy-popular-product-type-img" src="../Images/图传.png" alt="Image transmission">
+                <p class="wy-popular-product-type-name">Image transmission</p>
+            </div>
+            <div class="wy-popular-product-type-item" onclick="home.jumpToProducts('Popular Products')">
+                <img class="wy-popular-product-type-img" src="../Images/无人机.png" alt="Unmanned aerial vehicle">
+                <p class="wy-popular-product-type-name">Unmanned aerial vehicle</p>
+            </div>
+        </div>
+    </div>
     <!--热门产品-->
     <div id="wy-popular-products-carousel-chart">
         <div id="wy-popular-products-carousel-chart__row-1">
@@ -86,7 +124,7 @@
                 <div id="wy-popular-products-carousel-chart__card-long-container">
                     <!--卡片项-->
                     <div class="wy-popular-products-carousel-chart__card-item">
-                        <div class="wy-popular-products-carousel-chart__card">
+                        <div class="wy-popular-products-carousel-chart__card" onclick="home.jumpToProduct('id_1')">
                             <div class="wy-popular-products-carousel-chart__card-img-container">
                                 <img class="wy-popular-products-carousel-chart__card-img" src="../Images/产品模块1.webp">
                             </div>
@@ -201,11 +239,18 @@
             <div id="wy-popular-products-carousel-chart__choice-container">
                 <p id="wy-popular-products-carousel-chart__choice-title">We have the most popular products</p>
                 <p id="wy-popular-products-carousel-chart__choice-description">A trustworthy choice</p>
-                <div id="wy-popular-products-carousel-chart__choice-see-more" onclick="home.jumpToProducts()">See more</div>
+                <div id="wy-popular-products-carousel-chart__choice-see-more" onclick="home.jumpToProducts('Popular Products')">See more</div>
             </div>
         </div>
     </div>
-
+    <!--公司介绍-->
+    <div id="wy-about-us">
+        <div id="wy-about-us__description-container">
+            <p class="wy-about-us__description">some descriptioncccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc</p>
+            <p class="wy-about-us__description">some2 descriptioncccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc</p>
+        </div>
+         <img id="wy-about-us__img" src="../Images/主页公司介绍配图.png">
+    </div>
     <!-- code -->
     <script src="../JS/ProductType.js"></script>
     <script src="../JS/ProductData.js"></script>

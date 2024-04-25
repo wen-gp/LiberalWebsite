@@ -104,7 +104,7 @@ let productCards = [
         }
     },
     {
-        "tags": ["Module", "Popular Products"],
+        "tags": ["id_1", "Module", "Popular Products"],
         "card": {
             "imgPath": "https://cdn.gst-ir.com/20221110/1668067237576153.jpg",
             "name": "GST417W",

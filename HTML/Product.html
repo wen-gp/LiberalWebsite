@@ -26,14 +26,15 @@
 
         const search = window.location.search;
         const params = new URLSearchParams(search);
-        let product = JSON.parse(params.get("p"));
-        Product.name = product.name;
-        Product.remark = product.remark;
-        Product.description = product.description;
-        Product.features = product.features;
-        Product.parameters = product.parameters;
-        Product.carouselChartImgPaths = product.carouselChartImgPaths;
-        Product.create();
+        let obj = JSON.parse(params.get("p"));
+        let product = new Product();
+        product.name = obj.name;
+        product.remark = obj.remark;
+        product.description = obj.description;
+        product.features = obj.features;
+        product.parameters = obj.parameters;
+        product.carouselChartImgPaths = obj.carouselChartImgPaths;
+        product.create();
 
         let footer = new Footer()
         footer.initFooter();

@@ -9,27 +9,75 @@ body {
     align-items: flex-start;
     flex-direction: column;
 }
-
-#wy-popular-products-carousel-chart {
-    height: 20%;
+/* 热门类型 */
+#wy-popular-product-types-container {
+    height: 35%;
     width: 90%;
-    margin: 2% 5% 2% 5%;
-    background: rgba(0, 0, 0, 0.2);
+    margin: 5% 5% 5% 5%;
+    padding: 0;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+    background: rgb(230, 229, 229);
 }
-#wy-popular-product-types-container {
-    height: 20%;
+#wy-popular-product-type-title {
+    height: 6%;
+    width: 96%;
+    margin: 2% 0 0 4%;
+    padding: 0;
+}
+.wy-popular-product-types-container-row {
+    height: 42%;
     width: 100%;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    flex-direction: row;
+}
+.wy-popular-product-type-item {
+    height: 96%;
+    width: 21%;
+    margin: 2% 2%;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
-    background: rgb(216, 142, 142);
+    background: white;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgb(233, 232, 232);
+}
+.wy-popular-product-type-item:hover {
+    box-shadow: 0 0 20px rgb(224, 65, 65);
+}
+.wy-popular-product-type-img {
+    height: 80%;
+    width: 100%;
+}
+.wy-popular-product-type-name {
+    width: 90%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 5% 5% 0 5%;
+    padding: 0;
+    color: black;
+    word-wrap: break-word;
+    overflow: auto;
+}
+/* 热门产品 */
+#wy-popular-products-carousel-chart {
+    height: 20%;
+    width: 90%;
+    margin: 5% 5% 5% 5%;
+    background: rgb(230, 229, 229);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
 }
 
 #wy-popular-products-carousel-chart__row-1 {
@@ -113,6 +161,7 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .wy-popular-products-carousel-chart__card-img-container {
@@ -215,4 +264,33 @@ body {
 }
 #wy-popular-products-carousel-chart__choice-see-more:hover {
     background: rgb(56, 165, 243);
+}
+/* 公司介绍 */
+#wy-about-us {
+    height: 20%;
+    width: 90%;
+    margin: 5% 5% 5% 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+}
+#wy-about-us__description-container {
+    height: 100%;
+    width: 46%;
+    margin: 0 2%;
+}
+.wy-about-us__description {
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    color: black;
+    word-wrap: break-word;
+    overflow: auto;
+}
+#wy-about-us__img {
+    height: 100%;
+    width: 50%;
 }

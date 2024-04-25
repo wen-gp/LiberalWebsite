@@ -1,36 +1,36 @@
 class Product {
-    static name;//use
-    static remark;//use
-    static description;//use
-    static features = [];//use
-    static parameters = [];//use
-    static carouselChartImgPaths = [];//use
-    static applicationImgPaths = [];
-    static downloadFilePath;
-    static #boxCreator = new BoxCreator();
+    name;//use
+    remark;//use
+    description;//use
+    features = [];//use
+    parameters = [];//use
+    carouselChartImgPaths = [];//use
+    applicationImgPaths = [];
+    downloadFilePath;
+    #boxCreator = new BoxCreator();
 
     constructor() {
     }
 
-    static create() {
+    create() {
         let briefInfoContainer = document.createElement("div");
         briefInfoContainer.style.position = "relative";
         let productCarouselChart = new CarouselChart();
-        let briefInfoLeftContainer = productCarouselChart.create(Product.carouselChartImgPaths);
+        let briefInfoLeftContainer = productCarouselChart.create(this.carouselChartImgPaths);
         briefInfoLeftContainer.style.margin = "10%"
         briefInfoContainer.appendChild(briefInfoLeftContainer);
 
-        let briefInfoRightContainer = Product.#createBriefInfo();
+        let briefInfoRightContainer = this.#createBriefInfo();
         briefInfoContainer.appendChild(briefInfoRightContainer);
         document.body.appendChild(briefInfoContainer);
 
-        let descriptionContainer = Product.#createDescription();
+        let descriptionContainer = this.#createDescription();
         document.body.appendChild(descriptionContainer);
 
-        let tableContainer = Product.#createTable();
+        let tableContainer = this.#createTable();
         document.body.appendChild(tableContainer);
     }
-    static #createBriefInfo() {
+    #createBriefInfo() {
         let container = document.createElement("div");
         container.style.position = "absolute";
         container.style.left = "53%";
@@ -38,24 +38,24 @@ class Product {
         container.style.width = "40%";
         container.style.height = "60%";
 
-        let box = Product.#boxCreator.createColumnBox(container, "", "product-brief-info-box")
+        let box = this.#boxCreator.createColumnBox(container, "", "product-brief-info-box")
 
         let name = document.createElement("div");
-        name.innerText = Product.name;
+        name.innerText = this.name;
         name.style.color = "red";
         name.style.fontSize = "2rem";
         name.style.fontWeight = 500;
         box.appendChild(name);
 
         let remark = document.createElement("div");
-        remark.innerText = Product.remark;
+        remark.innerText = this.remark;
         remark.style.marginTop = "2%";
         remark.style.color = "black";
         remark.style.fontSize = "1.3rem";
         remark.style.fontWeight = 500;
         box.appendChild(remark);
 
-        if (Product.features.length > 0) {
+        if (this.features.length > 0) {
             let featureTitle = document.createElement("div");
             featureTitle.innerText = "Main Features:";
             featureTitle.style.marginTop = "2%";
@@ -64,8 +64,8 @@ class Product {
             featureTitle.style.fontWeight = 500;
             box.appendChild(featureTitle);
 
-            for (let i = 0; i < Product.features.length; i++) {
-                let feature = Product.features[i];
+            for (let i = 0; i < this.features.length; i++) {
+                let feature = this.features[i];
                 let ul = document.createElement('ul');
                 ul.innerText = feature.title;
                 ul.style.width = "100%";
@@ -87,8 +87,8 @@ class Product {
         }
         return container;
     }
-    static #createDescription() {
-        let container = Product.#boxCreator.createColumnBox(document.body);
+    #createDescription() {
+        let container = this.#boxCreator.createColumnBox(document.body);
         container.style.width = "84%";
         container.style.margin = "2% 8% 0 8%";
         container.style.background = "rgba(0,0,0,0.05)";
@@ -102,14 +102,14 @@ class Product {
         let value = document.createElement("div");
         value.style.margin = "2% 0% 2% 0%";
         value.style.color = "rgba(0,0,0,0.7)";
-        value.innerText = Product.description;
+        value.innerText = this.description;
         value.style.fontSize = "15px";
         value.style.fontWeight = 300;
         container.appendChild(value);
 
         return container;
     }
-    static #createTable() {
+    #createTable() {
         let container = document.createElement("div");
         container.style.width = "84%";
         container.style.margin = "2% 8% 3% 8%";
@@ -117,8 +117,8 @@ class Product {
         let table = document.createElement("table");
         table.style.width = '100%';
         table.style.borderCollapse = 'collapse';
-        for (var i = 0; i < Product.parameters.length; i++) {
-            let parameter = Product.parameters[i];
+        for (var i = 0; i < this.parameters.length; i++) {
+            let parameter = this.parameters[i];
             var tr = document.createElement('tr');
             if(i%2 == 0)
             {
@@ -146,10 +146,10 @@ class Product {
         container.appendChild(table)
         return container;
     }
-    static #download() {  
+    #download() {  
         var element = document.createElement('a');  
-        element.href = Product.downloadFilePath;  
-        element.download = Product.downloadFilePath.split(/[\\/]/).pop();
+        element.href = this.downloadFilePath;  
+        element.download = this.downloadFilePath.split(/[\\/]/).pop();
         element.innerText = "download";
         element.style.cursor = "pointer";
         element.style.textDecoration = "none";

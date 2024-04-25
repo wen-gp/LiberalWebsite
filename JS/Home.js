@@ -38,7 +38,17 @@ class Home{
         }, 500);
         this.#isEnableReorderBanner = true;
     }
-    jumpToProducts() {
-        window.location.href = './Products.html?origin=productMenu&productType=' + encodeURIComponent("Popular Products");
+    jumpToProducts(tag) {
+        window.location.href = './Products.html?origin=productMenu&productType=' + encodeURIComponent(tag);
+    }
+    jumpToProduct(id) {
+        for (let i = 0; i < productCards.length; i++) {
+            let productCard = productCards[i];
+            if(productCard.tags.includes(id)) {
+                window.location.href = './Product.html?p=' + encodeURIComponent(JSON.stringify(productCard.product));
+                break;
+            }
+        }
+
     }
 }
