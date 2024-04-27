@@ -284,7 +284,8 @@ body {
     width: 100%;
     font-size: 1.3rem;
     font-weight: 300;
-    margin: 0;
+    line-height: 4vh;
+    margin-top: 8%;
     padding: 0;
     color: black;
     word-wrap: break-word;

@@ -2,17 +2,13 @@ class ProductCard {
     imgPath;
     name;
     description;
-    resolution;
-    pixelSize;
-    netd;
+    cardParameters;
     #boxCreator = new BoxCreator();
-    constructor(imgPath, name, description, resolution = "", pixelSize = "", netd = "") {
+    constructor(imgPath, name, description, cardParameters) {
         this.imgPath = imgPath ?? "";
         this.name = name ?? "";
         this.description = description ?? "";
-        this.resolution = resolution ?? "";
-        this.pixelSize = pixelSize ?? "";
-        this.netd = netd ?? "";
+        this.cardParameters = cardParameters;
     }
     create(box, product) {
         let container = this.#boxCreator.createColumnBox(box);
@@ -60,37 +56,16 @@ class ProductCard {
         descriptionContainer.style.fontWeight = 400;
         container.appendChild(descriptionContainer);
 
-        if (this.resolution != "") {
-            let resolutionContainer = document.createElement('div');
-            resolutionContainer.innerText = `resolution:${this.resolution}`;
-            resolutionContainer.style.width = "90%";
-            resolutionContainer.style.margin = "2% 2% 0 10%";
-            resolutionContainer.style.color = "rgba(0, 0, 0, 0.6)";
-            resolutionContainer.style.fontSize = "1.0rem";
-            resolutionContainer.style.fontWeight = 400;
-            container.appendChild(resolutionContainer);
-        }
-
-        if (this.pixelSizeContainer != "") {
-            let pixelSizeContainer = document.createElement('div');
-            pixelSizeContainer.innerText = `pixel size:${this.pixelSize}`;
-            pixelSizeContainer.style.width = "90%";
-            pixelSizeContainer.style.margin = "2% 2% 0 10%";
-            pixelSizeContainer.style.color = "rgba(0, 0, 0, 0.6)";
-            pixelSizeContainer.style.fontSize = "1.0rem";
-            pixelSizeContainer.style.fontWeight = 400;
-            container.appendChild(pixelSizeContainer);
-        }
-
-        if (this.netdContainer != "") {
-            let netdContainer = document.createElement('div');
-            netdContainer.innerText = `netd:${this.netd}`;
-            netdContainer.style.color = "rgba(0, 0, 0, 0.6)";
-            netdContainer.style.width = "90%";
-            netdContainer.style.margin = "2% 2% 0 10%";
-            netdContainer.style.fontSize = "1.0rem";
-            netdContainer.style.fontWeight = 400;
-            container.appendChild(netdContainer);
+        for (let i = 0; i < this.cardParameters.length; i++) {
+            const cardParameter = this.cardParameters[i];
+            let cardParameterContainer = document.createElement('div');
+            cardParameterContainer.innerText = cardParameter;
+            cardParameterContainer.style.width = "90%";
+            cardParameterContainer.style.margin = "2% 2% 0 10%";
+            cardParameterContainer.style.color = "rgba(0, 0, 0, 0.6)";
+            cardParameterContainer.style.fontSize = "1.0rem";
+            cardParameterContainer.style.fontWeight = 400;
+            container.appendChild(cardParameterContainer);
         }
         this.#addEventListeners(container, imgContainer, img, product);
     }
