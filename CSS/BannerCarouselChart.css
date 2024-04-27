@@ -1,5 +1,5 @@
 #wy-banner-carousel-chart {
-    height: 100vh;
+    height: 27%;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -81,7 +81,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 .wy-banner-carousel-chart__banner-option:hover{
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
