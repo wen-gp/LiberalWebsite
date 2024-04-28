@@ -67,8 +67,8 @@ let productTypes = [
                         "type": "Tilt Sensor"
                     },
                     {
-                        "display": "Sadar",
-                        "type": "Sadar"
+                        "display": "Radar",
+                        "type": "Radar"
                     },
                     {
                         "display": "Other Sensors",

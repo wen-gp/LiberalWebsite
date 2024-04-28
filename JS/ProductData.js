@@ -1,103 +1,405 @@
 let productCards = [
-        {
-        "tags": ["Module", "Popular Products"],
+    {
+        "tags": ["Radar", "雷达-CH128X1", "id-1"],
         "card": {
-            "imgPath": "https://cdn.gst-ir.com/20221110/1668064473968416.jpg",
-            "name": "GST212W",
-            "description": "Wafer Level Infrared Detector",
-            "cardParameters": []
+            "imgPath": "../Images/雷达-CH128X1.png",
+            "name": "CH128X1",
+            "description": "Hybrid solid-state LiDAR",
+            "cardParameters": ["frequency:5~25Hz", "accuracy:±3cm", "power dissipation:15W"]
         },
         "product": {
-            "name": "GST212W",
-            "remark": "Designed for emerging markets and popularization of infrared applications",
-            "description": "GST212W Gaoxin Technology Wafer Level Package (WLP) uncooled infrared detector has a resolution of 256x192 and a pixel size of 12μm, meeting the needs of SWaP. It is small in size, light in weight and low in price. It has achieved mass production and annual output Up to 1 million. Due to its light weight and low price, it can be widely used in emerging markets for infrared thermal imaging such as consumer electronics and smart homes.",
+            "name": "CH128X1",
+            "remark": "High performance, small size More suitable for embedding into the car intake grille",
+            "description": "Compared with traditional mechanical LiDAR, the CH series LiDAR mostly has a solid-state structure inside, with only the prism rotating. The durability and assembly efficiency of the radar are greatly improved, making it easier to achieve large-scale production.GST212W Gaoxin Technology Wafer Level Package (WLP) uncooled infrared detector has a resolution of 256x192 and a pixel size of 12μm, meeting the needs of SWaP. It is small in size, light in weight and low in price. It has achieved mass production and annual output Up to 1 million. Due to its light weight and low price, it can be widely used in emerging markets for infrared thermal imaging such as consumer electronics and smart homes.",
             "features": [
                 {
-                    "title": "Lightweight design",
+                    "title": "Vehicle grade design standards",
                     "items": [
-                        "Dimensionsaslowas10.53×7.44×1.45mm(excludingPCB)",
-                        "",
-                        "Lightweightaslowas0.5g"
-                    ]
-                },
-                {
-                    "title": "Detector is sensitive",
-                    "items": [
-                        "Sensitivedetection,typicalNETD<30mK",
-                        "",
-                        "Lowpowerconsumptiondesign"
-                    ]
-                },
-                {
-                    "title": "Consumer applications",
-                    "items": [
-                        "Large-scaleapplication",
-                        "",
-                        "Integrationofinfraredfunctionsatlowcost"
+                        "Mini body, containing stronger perceptual performance",
                     ]
                 }
             ],
             "parameters": [
                 {
-                    "name": "Product number",
-                    "value": "GST212W Uncooled Infrared Detector"
+                    "name": "scanning frequency",
+                    "value": "5~25Hz"
                 },
                 {
-                    "name": "sensitive materials",
-                    "value": "Vanadium oxide"
+                    "name": "measuring point rate",
+                    "value": "760,000 pts/s (single echo)"
                 },
                 {
-                    "name": "Area array specifications",
-                    "value": "256×192"
+                    "name": "accuracy",
+                    "value": "±3cm"
                 },
                 {
-                    "name": "Pixel spacing",
-                    "value": "12μm"
+                    "name": "power dissipation",
+                    "value": "15W"
                 },
                 {
-                    "name": "Spectral range",
-                    "value": "8-14μm"
+                    "name": "operating temperature",
+                    "value": "-40℃ ~ 85℃"
                 },
                 {
-                    "name": "Typical NETD",
-                    "value": "<40mk"
+                    "name": "size",
+                    "value": "118(L) * 90(W) * 75(H)mm"
                 },
-                {
-                    "name": "output signal",
-                    "value": "Built-in 14-bit ADC"
-                },
-                {
-                    "name": "Thermal response time",
-                    "value": "<12ms"
-                },
-                {
-                    "name": "Maximum frame rate",
-                    "value": "50Hz"
-                },
-                {
-                    "name": "Power consumption",
-                    "value": "≤75mW"
-                },
-                {
-                    "name": "Dimensions(mm)",
-                    "value": "10.53×7.44×1.45 (excluding PCB)"
-                },
-                {
-                    "name": "weight",
-                    "value": "<0.5g"
-                },
-                {
-                    "name": "Operating temperature",
-                    "value": "-40°C ~ +85°C"
-                }
             ],
             "carouselChartImgPaths": [
-                "https://cdn.gst-ir.com/20221110/1668064473968416.jpg",
-                "https://cdn.gst-ir.com/20221110/1668064473573105.jpg",
-                "https://cdn.gst-ir.com/20221110/1668064473539756.jpg",
-                "https://cdn.gst-ir.com/20221110/1668064473968416.jpg",
-                "https://cdn.gst-ir.com/20221110/1668064473573105.jpg",
-                "https://cdn.gst-ir.com/20221110/1668064473539756.jpg"
+                "../Images/雷达-CH128X1.png",
+            ]
+        }
+    },
+    {
+        "tags": ["Radar", "雷达-CX128S1", "id-2"],
+        "card": {
+            "imgPath": "../Images/雷达-CX128S1.png",
+            "name": "CX128S1",
+            "description": "Hybrid solid-state LiDAR",
+            "cardParameters": ["frequency:5~25Hz", "accuracy:±3cm", "power dissipation:15W"]
+        },
+        "product": {
+            "name": "CH128X1",
+            "remark": "High performance, small size Flat structure, more suitable for embedding into the roof",
+            "description": "Compared with traditional mechanical LiDAR, the CH series LiDAR mostly has a solid-state structure inside, with only the prism rotating. The durability and assembly efficiency of the radar are greatly improved, making it easier to achieve large-scale production.",
+            "features": [
+                {
+                    "title": "Vehicle grade design standards",
+                    "items": [
+                        "Mini body, containing stronger perceptual performance",
+                    ]
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "scanning frequency",
+                    "value": "5~25Hz"
+                },
+                {
+                    "name": "measuring point rate",
+                    "value": "760,000 pts/s (single echo)"
+                },
+                {
+                    "name": "accuracy",
+                    "value": "±3cm"
+                },
+                {
+                    "name": "power dissipation",
+                    "value": "15W"
+                },
+                {
+                    "name": "operating temperature",
+                    "value": "-40℃ ~ 85℃"
+                },
+                {
+                    "name": "size",
+                    "value": "140(L) * 90(W) * 45(H)mm"
+                },
+            ],
+            "carouselChartImgPaths": [
+                "../Images/雷达-CX128S1.png",
+            ]
+        }
+    },
+    {
+        "tags": ["Radar", "雷达-C16", "id-3"],
+        "card": {
+            "imgPath": "../Images/雷达-C16.png",
+            "name": "C16",
+            "description": "Mechanical LiDAR",
+            "cardParameters": ["Detection distance:5~25Hz", "accuracy:±3cm", "Impact:500m/sec²"]
+        },
+        "product": {
+            "name": "C16",
+            "remark": "Mechanical LiDAR",
+            "description": "Compared with traditional mechanical LiDAR, the CH series LiDAR mostly has a solid-state structure inside, with only the prism rotating. The durability and assembly efficiency of the radar are greatly improved, making it easier to achieve large-scale production.GST212W Gaoxin Technology Wafer Level Package (WLP) uncooled infrared detector has a resolution of 256x192 and a pixel size of 12μm, meeting the needs of SWaP. It is small in size, light in weight and low in price. It has achieved mass production and annual output Up to 1 million. Due to its light weight and low price, it can be widely used in emerging markets for infrared thermal imaging such as consumer electronics and smart homes.",
+            "features": [
+                {
+                    "title": "Highly integrated",
+                    "items": [
+                        "More stable and reliable",
+                    ]
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "Detection distance",
+                    "value": "5~25Hz"
+                },
+                {
+                    "name": "Measurement point rate",
+                    "value": "320,000 pts/s (single echo)"
+                },
+                {
+                    "name": "accuracy",
+                    "value": "±3cm"
+                },
+                {
+                    "name": "Horizontal angle resolution",
+                    "value": "0.09°@5Hz, 0.18°@10Hz, 0.36°@20Hz"
+                },
+                {
+                    "name": "Vertical angle resolution",
+                    "value": "2°"
+                },
+                {
+                    "name": "Impact",
+                    "value": "500m/sec²"
+                },
+                {
+                    "name": "vibration",
+                    "value": "5Hz-2000Hz, 3G rms"
+                },
+                {
+                    "name": "working temperature ",
+                    "value": "-20℃ ~ 60℃"
+                },
+            ],
+            "carouselChartImgPaths": [
+                "../Images/雷达-C16.png",
+            ]
+        }
+    },
+    {
+        "tags": ["Magnetic grating ruler", "磁栅尺-1.png", "id-4"],
+        "card": {
+            "imgPath": "../Images/磁栅尺-1.png",
+            "name": "AOMS-12131",
+            "description": "",
+            "cardParameters": ["Supply current:＜35mA", "Output signal: RS422", "Maximum cable length:200M"]
+        },
+        "product": {
+            "name": "AOMS-12131",
+            "remark": "Our magnetic balance is an ideal choice for handling harsh conditions.",
+            "description": "An optical linear encoder uses light (optics) to identify unique positions for the encoder, while a magnetic encoder uses the same principle to determine a position as an optical encoder, but it does it using magnetic fields rather than light.",
+            "features": [
+                {
+                    "title": "Cable Voltage-drop",
+                    "items": [
+                        "~4.8mV/m-without load",
+                        "~12.5mV/m-with 120Ω load",
+                    ]
+                },
+                {
+                    "title": "Signal Level",
+                    "items": [
+                        "UH≥2.5V at-IH=20mA",
+                        "UL≤0.5V at IL=20mA",
+                    ]
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "Voltage",
+                    "value": "4.7V to 7V( The range of antipole and overvoltage protection:-20V-+20V)"
+                },
+                {
+                    "name": "Supply current",
+                    "value": "＜35mA"
+                },
+                {
+                    "name": "Output signal",
+                    "value": "RS422"
+                },
+                {
+                    "name": "Temperature",
+                    "value": "-10℃-+80℃"
+                },
+                {
+                    "name": "Storage",
+                    "value": "-40℃-+85℃"
+                },
+                {
+                    "name": "Resolution",
+                    "value": "0.01mm,0.005mm,0.001mm"
+                },
+                {
+                    "name": "Accuracy",
+                    "value": "±0.025mm/M"
+                },
+                {
+                    "name": "Repeat Accuracy",
+                    "value": "1 pulse"
+                },
+                {
+                    "name": "Maximum cable length",
+                    "value": "200M"
+                },
+            ],
+            "carouselChartImgPaths": [
+                "../Images/磁栅尺-1.png",
+            ]
+        }
+    },
+    {
+        "tags": ["Magnetic grating ruler", "磁栅尺-2.png", "id-4"],
+        "card": {
+            "imgPath": "../Images/磁栅尺-2.png",
+            "name": "AOMS-12132",
+            "description": "",
+            "cardParameters": ["Supply current:＜35mA", "Output signal: RS422", "Maximum cable length:200M"]
+        },
+        "product": {
+            "name": "AOMS-12132",
+            "remark": "Our magnetic balance is an ideal choice for handling harsh conditions.",
+            "description": "An optical linear encoder uses light (optics) to identify unique positions for the encoder, while a magnetic encoder uses the same principle to determine a position as an optical encoder, but it does it using magnetic fields rather than light.",
+            "features": [
+                {
+                    "title": "Cable Voltage-drop",
+                    "items": [
+                        "~4.8mV/m-without load",
+                        "~12.5mV/m-with 120Ω load",
+                    ]
+                },
+                {
+                    "title": "Signal Level",
+                    "items": [
+                        "UH≥2.5V at-IH=20mA",
+                        "UL≤0.5V at IL=20mA",
+                    ]
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "Voltage",
+                    "value": "4.7V to 7V( The range of antipole and overvoltage protection:-20V-+20V)"
+                },
+                {
+                    "name": "Supply current",
+                    "value": "＜35mA"
+                },
+                {
+                    "name": "Output signal",
+                    "value": "RS422"
+                },
+                {
+                    "name": "Temperature",
+                    "value": "-10℃-+80℃"
+                },
+                {
+                    "name": "Storage",
+                    "value": "-40℃-+85℃"
+                },
+                {
+                    "name": "Resolution",
+                    "value": "0.01mm,0.005mm,0.001mm"
+                },
+                {
+                    "name": "Accuracy",
+                    "value": "±0.025mm/M"
+                },
+                {
+                    "name": "Repeat Accuracy",
+                    "value": "1 pulse"
+                },
+                {
+                    "name": "Maximum cable length",
+                    "value": "200M"
+                },
+            ],
+            "carouselChartImgPaths": [
+                "../Images/磁栅尺-2.png",
+            ]
+        }
+    },
+    {
+        "tags": ["Industrial connectors", "id-4"],
+        "card": {
+            "imgPath": "../Images/工业连接器-1.png",
+            "name": "FEAM4F-0.5/CF-CON",
+            "description": "",
+            "cardParameters": ["digit:4", "line type:Scattered line type", "Rated voltage:250V"]
+        },
+        "product": {
+            "name": "FEAM4F-0.5/CF-CON",
+            "remark": "Our magnetic balance is an ideal choice for handling harsh conditions.",
+            "description": "An optical linear encoder uses light (optics) to identify unique positions for the encoder, while a magnetic encoder uses the same principle to determine a position as an optical encoder, but it does it using magnetic fields rather than light.",
+            "features": [
+                {
+                    "title": "Product attributes",
+                    "items": [
+                        "Circular connector",
+                        "Rated voltage:250V",
+                        "line type:Scattered line type",
+                    ]
+                },
+            ],
+            "parameters": [
+                {
+                    "name": "product type",
+                    "value": "4.7V to 7V( The range of antipole and overvoltage protection:-20V-+20V)"
+                },
+                {
+                    "name": "Number of poles",
+                    "value": "＜35mA"
+                },
+                {
+                    "name": "type",
+                    "value": "RS422"
+                },
+                {
+                    "name": "Connection Type",
+                    "value": "-10℃-+80℃"
+                },
+                {
+                    "name": "Anti-misplug coding",
+                    "value": "-40℃-+85℃"
+                },
+                {
+                    "name": "joint angle",
+                    "value": "0.01mm,0.005mm,0.001mm"
+                },
+                {
+                    "name": "Rated voltage",
+                    "value": "±0.025mm/M"
+                },
+                {
+                    "name": "Rated current",
+                    "value": "1 pulse"
+                },
+                {
+                    "name": "Wire diameter",
+                    "value": "200M"
+                },
+                {
+                    "name": "Contact resistance",
+                    "value": "4.7V to 7V( The range of antipole and overvoltage protection:-20V-+20V)"
+                },
+                {
+                    "name": "Insulation resistance",
+                    "value": "＜35mA"
+                },
+                {
+                    "name": "pollution level",
+                    "value": "RS422"
+                },
+                {
+                    "name": "Connection Type",
+                    "value": "-10℃-+80℃"
+                },
+                {
+                    "name": "Anti-misplug coding",
+                    "value": "-40℃-+85℃"
+                },
+                {
+                    "name": "joint angle",
+                    "value": "0.01mm,0.005mm,0.001mm"
+                },
+                {
+                    "name": "Rated voltage",
+                    "value": "±0.025mm/M"
+                },
+                {
+                    "name": "Rated current",
+                    "value": "1 pulse"
+                },
+                {
+                    "name": "Wire diameter",
+                    "value": "200M"
+                },
+            ],
+            "carouselChartImgPaths": [
+                "../Images/工业连接器-1.png",
             ]
         }
     },

@@ -15,6 +15,7 @@ class Product {
     create() {
         let briefInfoContainer = document.createElement("div");
         briefInfoContainer.style.position = "relative";
+        briefInfoContainer.style.width = "100%";
         let productCarouselChart = new CarouselChart();
         let briefInfoLeftContainer = productCarouselChart.create(this.carouselChartImgPaths);
         briefInfoLeftContainer.style.margin = "10%"

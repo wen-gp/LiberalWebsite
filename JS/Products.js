@@ -111,7 +111,7 @@ class ProductBuilder {
                     box.style.margin = "4% 0% 4% 4%";
                 }
                 let c = productCard.card;
-                let card = new ProductCard(c.imgPath, c.name, c.description, c.resolution, c.pixelSize, c.netd);
+                let card = new ProductCard(c.imgPath, c.name, c.description, c.cardParameters);
                 card.create(box, productCard.product);
                 n++;
                 if (n == 4) {
@@ -135,7 +135,7 @@ class ProductBuilder {
                     box.style.margin = "4% 0% 4% 4%";
                 }
                 let c = productCard.card;
-                let card = new ProductCard(c.imgPath, c.name, c.description, c.resolution, c.pixelSize, c.netd);
+                let card = new ProductCard(c.imgPath, c.name, c.description, c.cardParameters);
                 card.create(box, productCard.product);
                 n++;
                 if (n == 4) {
