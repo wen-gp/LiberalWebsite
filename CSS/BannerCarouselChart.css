@@ -28,6 +28,10 @@
     margin: 0;
     padding: 0;
     position: relative;  
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
 }
 
 .wy-banner-carousel-chart__img {
@@ -36,12 +40,22 @@
     margin: 0;
     padding: 0;
 }
-.wy-banner-carousel-chart__content{
+.wy-banner-carousel-chart__title{
     position: absolute; 
     top: 20%; 
     left: 10%; 
     color: white; 
     font-size: 3rem;
+    line-height: 10%;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* 可选：给文本添加阴影 */   
+}
+.wy-banner-carousel-chart__content{
+    position: absolute; 
+    top: 30%; 
+    left: 10%; 
+    color: white; 
+    font-size: 1.5rem;
+    line-height: 100%;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* 可选：给文本添加阴影 */   
 }
 

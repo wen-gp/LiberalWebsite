@@ -11,10 +11,7 @@ class Footer {
         row1Column1.appendChild(logo);
 
         let companyIntroduction =  this.#boxCreator.createRowBox(row1Column1, "footer-font footer-row-1-unit-box", "footer-company-introduction");
-        companyIntroduction.innerText = "We are committed to infrared modules, "+
-        "Most of the company's products are independently developed, And the "+
-        "domestic market share ranks in the front of the industry, Breaking "+
-        "th long term monopoly of foreign companies."
+        companyIntroduction.innerText = "LIBERAL is your one-stop-shop for all your electronic needs. We offer a wide range of electronic components, measurement instruments, tools, hardware components, electrical products, and consumer electronics components. Our commitment to quality and service has made us the most trusted supplier in the microelectronics market."
 
         let contentTitle = this.#boxCreator.createRowBox(footerBox, "", "footer-content-title");
         contentTitle.innerText = "CONNECT WITH US";
