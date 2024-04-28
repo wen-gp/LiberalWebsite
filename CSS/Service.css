@@ -1,6 +1,6 @@
 html,
 body {
-    height: 100%;
+    height: 200%;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -46,7 +46,7 @@ body {
     width: 42%;
 }
 #service-row-1-column-2{
-    margin: 0% 0% 0 8%;
+    margin: 4% 0% 0 8%;
     height: 100%;
     width: 50%;
 }
@@ -54,7 +54,7 @@ body {
     margin: 1% 8% 0 8%;
     height: 100%;
     width: calc(100% - 16%);
-    line-height: 2.5vh;
+    line-height: 4vh;
 }
 #service-row-3{
     margin: 2% 8% 0 8%;
@@ -75,12 +75,13 @@ body {
     flex-direction:column; 
 }
 #service-row-3-column-1-row-1{
-    margin: 15% 0% 0 0%;
+    margin: 30% 0% 0 0%;
     font-size: 1.5rem;
     font-weight: 300;
 }
 #service-row-3-column-1-row-2{
     margin: 2% 0% 0 0%;
+    line-height: 4vh;
 }
 #service-row-3-column-2{
     margin: 0% 0% 0 0%;
@@ -113,6 +114,7 @@ body {
 }
 #service-row-4-column-1-row-2{
     margin: 2% 0% 0 0%;
+    line-height: 4vh;
 }
 #service-row-4-column-2{
     margin: 0% 0% 0 0%;
