@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDLW Color Interpolation with User Input</title>
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        canvas {
+            display: block;
+            background-color: #ffffff;
+            height: 100%;
+            width: 100%;
+            opacity: 0.5;
+        }
+
+        #inputForm {
+            position: absolute;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid black;
+            display: none;
+        }
+
+        #confirmButton {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            width: 100px;
+            height: 100px;
+        }
+
+        #image-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #image-container img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #upload-button {
+            position: absolute;
+            bottom: 10px;
+            right: 120px;
+            padding: 5px 10px;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="inputForm">
+        <input type="number" id="inputValue" placeholder="输入数值" value="1" />
+        <button id="submitButton">确定</button>
+    </div>
+    <button id="confirmButton">计算</button>
+    <div id="image-container">
+        <img id="uploaded-image" src="#" alt="请上传图片">
+    </div>
+
+    <input type="file" id="image-upload" accept="image/*" style="display: none;">
+    <button id="upload-button">上传图片</button>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const inputForm = document.getElementById('inputForm');
+        const inputValue = document.getElementById('inputValue');
+        const submitButton = document.getElementById('submitButton');
+        const confirmButton = document.getElementById('confirmButton');
+        const uploadButton = document.getElementById('upload-button')
+        // let points = [{ x: 647, y: 480, value: 611, color: null },
+        // { x: 891, y: 259, value: 630, color: null },
+        // { x: 895, y: 310, value: 632, color: null },
+        // { x: 1052, y: 315, value: 633, color: null },
+        // { x: 1156, y: 316, value: 634, color: null },
+        // { x: 772, y: 314, value: 645, color: null },
+        // { x: 659, y: 313, value: 646, color: null },
+        // { x: 892, y: 209, value: 650, color: null },
+        // { x: 902, y: 488, value: 671, color: null },
+        // { x: 1182, y: 483, value: 675, color: null },
+        // { x: 905, y: 595, value: 680, color: null },
+        // { x: 770, y: 487, value: 684, color: null },
+        // { x: 1049, y: 482, value: 692, color: null }];
+
+        let points = [];//{ x: 0, y: 0, value: 0, color: { r: 0, g: 0, b: 0 }} }
+
+        const colors = [
+            { r: 0, g: 0, b: 128 },   // 深蓝色 
+            { r: 107, g: 142, b: 35 },    // 绿色  
+            { r: 255, g: 255, b: 0 },  // 黄色   
+            { r: 193, g: 0, b: 0 },    // 深红色  
+        ];
+
+        function distance(p1, p2) {
+            return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2));
+        }
+        // 距离对数反比加权函数  
+        function idw(x, y) {
+            let totalWeight = 0;
+            let weightedColor = { r: 0, g: 0, b: 0 };
+            for (let point of points) {
+                const dist = distance({ x, y }, point);
+                if (dist === 0) continue; // 避免除以零  
+                const weight = 1 / Math.pow(dist, 2);
+
+                weightedColor.r += point.color.r * weight;
+                weightedColor.g += point.color.g * weight;
+                weightedColor.b += point.color.b * weight;
+                totalWeight += weight;
+            }
+
+            // 平均颜色值  
+            const averageColor = {
+                r: Math.round(weightedColor.r / totalWeight),
+                g: Math.round(weightedColor.g / totalWeight),
+                b: Math.round(weightedColor.b / totalWeight)
+            };
+
+            return averageColor;
+        }
+        function drawCircle(x, y, value) {
+            if (value != null && value !== undefined) {
+                ctx.beginPath();
+                ctx.arc(x, y, 10, 0, Math.PI * 2, false);
+                ctx.fillStyle = 'rgba(0, 0, 0, 1)';
+                ctx.fill();
+                ctx.closePath();
+            }
+        }
+        function drawText(x, y, text) {
+            ctx.fillStyle = 'black';
+            ctx.fillText(text, x + 15, y + 5);
+        }
+        function drawPoint(x, y, text) {
+            for (let point of points) {
+                drawCircle(point.x, point.y, point.value);
+                if (point.value) {
+                    drawText(point.x, point.y, point.value);
+                }
+            }
+        }
+        function draw() {
+            points = points.filter(a => a.value != null && a.value != undefined);
+            compute();
+            drawPoint();
+        }
+        function compute() {
+            points.sort((a, b) => a.value - b.value);
+            const minValue = points[0].value;
+            const maxValue = points[points.length - 1].value;
+            points.forEach((point, index) => {
+                const normalizedValue = (point.value - minValue) / (maxValue - minValue);
+                point.color = { r: 0, g: 0, b: 0 };
+                let rgb = lerpColor(normalizedValue);
+                point.color.r = rgb.r;
+                point.color.g = rgb.g;
+                point.color.b = rgb.b;
+                console.log(JSON.stringify(point.color));
+            });
+            let gridSize = 1;
+            for (let y = 0; y < canvas.height; y += gridSize) {
+                for (let x = 0; x < canvas.width; x += gridSize) {
+                    const color = idw(x, y, points);
+                    ctx.fillStyle = `rgb(${color.r},${color.g},${color.b})`;
+                    ctx.fillRect(x, y, 1, 1);
+                }
+            }
+        }
+        function lerpColor(t) {
+            let step = 1 / 3;
+            let cutT = t;
+            let startColor = colors[0];
+            let endColor = colors[1];
+            if (t >= 0 && t < (1 * step)) {
+                startColor = colors[0];
+                endColor = colors[1];
+                cutT -= 0;
+            }
+            else if (t >= (1 * step) && t < (2 * step)) {
+                startColor = colors[1];
+                endColor = colors[2];
+                cutT -= step;
+            }
+            else if (t >= (2 * step)) {
+                startColor = colors[2];
+                endColor = colors[3];
+                cutT -= 2 * step;
+            }
+            let tt = (cutT / step);
+            if (tt > 1) {
+                tt = 1;
+            }
+            const r = Math.round(startColor.r + (endColor.r - startColor.r) * tt);
+            const g = Math.round(startColor.g + (endColor.g - startColor.g) * tt);
+            const b = Math.round(startColor.b + (endColor.b - startColor.b) * tt);
+            return { r, g, b };
+        }
+
+        canvas.addEventListener('click', (e) => {
+            const x = e.clientX + 2;
+            const y = e.clientY;
+            points.push({ x, y, value: null, color: null });
+            inputForm.style.display = 'block';
+            inputForm.style.left = `${x}px`;
+            inputForm.style.top = `${y}px`;
+            drawPoint();
+        });
+        submitButton.addEventListener('click', () => {
+            const x = parseInt(inputForm.style.left);
+            const y = parseInt(inputForm.style.top);
+            const point = points.find(p => p.x === x && p.y === y);
+            if (point) {
+                point.value = parseInt(inputValue.value);
+                inputForm.style.display = 'none';
+                drawPoint();
+            }
+        });
+        confirmButton.addEventListener('click', () => {
+            draw();
+        });
+        uploadButton.addEventListener('click', function () {
+            var fileInput = document.getElementById('image-upload');
+            var fileReader = new FileReader();
+
+            // 显示文件选择对话框  
+            fileInput.click();
+
+            // 处理文件选择后的操作  
+            fileInput.addEventListener('change', function (e) {
+                var file = e.target.files[0];
+                if (file) {
+                    fileReader.readAsDataURL(file); // 读取文件内容  
+                }
+            }, false);
+
+            // 处理文件读取完成后的操作  
+            fileReader.onload = function (e) {
+                var img = document.getElementById('uploaded-image');
+                img.src = e.target.result; // 将读取到的数据设置为图片的源  
+            };
+        });
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        drawPoint();
+    </script>
+</body>
+
+</html>
