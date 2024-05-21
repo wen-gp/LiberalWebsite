@@ -3,36 +3,208 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>test</title>
-  <link href="../CSS/Footer.css" rel="stylesheet" />
+  <title>IDLW Color Interpolation with User Input</title>
   <style>
-    html,
     body {
-      height: 100%;
-      width: 100%;
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      flex-direction: column;
+      overflow: hidden;
+    }
+
+    canvas {
+      display: block;
+      background-color: #ffffff;
+    }
+
+    #inputForm {
+      position: absolute;
+      padding: 10px;
+      background-color: white;
+      border: 1px solid black;
+      display: none;
+    }
+
+    #confirmButton {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      padding: 5px 10px;
+      width: 100px;
+      height: 100px;
     }
   </style>
 </head>
 
 <body>
-  <!-- code -->
-  <script src="../JS/BoxCreator.js"></script>
-  <!-- <script src="../JS/Header.js"></script> -->
-  <script src="../JS/Footer.js"></script>
-  <script>
-    // let header = new Header()
-    // header.initHeaders();
+  <canvas id="canvas"></canvas>
+  <div id="inputForm">
+    <input type="number" id="inputValue" placeholder="Enter a number" />
+    <button id="submitButton">Submit</button>
+  </div>
+  <button id="confirmButton">Confirm</button>
 
-    let footer = new Footer()
-    footer.initFooter();
+  <script>
+    //#region 距离对数反比加权算法
+    // 将RGB颜色转换为单个数值以便进行加权平均  
+    function rgbToNumeric(r, g, b) {
+      return (r << 16) | (g << 8) | b;
+    }
+
+    // 将单个数值的颜色转换回RGB  
+    function numericToRgb(colorNumeric) {
+      return {
+        r: (colorNumeric >> 16) & 0xFF,
+        g: (colorNumeric >> 8) & 0xFF,
+        b: colorNumeric & 0xFF
+      };
+    }
+
+    // 距离对数反比加权函数  
+    function inverseDistanceLogarithmicWeighting(x, y, points) {
+      let totalWeight = 0;
+      let weightedColor = { r: 0, g: 0, b: 0 };
+
+      for (let point of points) {
+        const dx = x - point.x;
+        const dy = y - point.y;
+        const distance = Math.sqrt(dx * dx + dy * dy) + 1e-6; // 防止除以0  
+
+        // 修改权重函数以增加近距离的影响力  
+        // 这里使用了一个调整因子（如2）来增加权重的差异  
+        const weight = 1 / (Math.log(distance) * Math.log(distance + 1));
+
+        weightedColor.r += point.color.r * weight;
+        weightedColor.g += point.color.g * weight;
+        weightedColor.b += point.color.b * weight;
+        totalWeight += weight;
+      }
+
+      const averageColor = {
+        r: Math.round(weightedColor.r / totalWeight),
+        g: Math.round(weightedColor.g / totalWeight),
+        b: Math.round(weightedColor.b / totalWeight)
+      };
+
+      return averageColor;
+    }
+    //#endregion
+
+
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const inputForm = document.getElementById('inputForm');
+    const inputValue = document.getElementById('inputValue');
+    const submitButton = document.getElementById('submitButton');
+    const confirmButton = document.getElementById('confirmButton');
+    let _points = []; // Now dynamically populated  
+    let isConfirmed = false;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      draw();
+    }
+
+    function drawCircle(x, y) {
+      ctx.beginPath();
+      ctx.arc(x, y, 10, 0, Math.PI * 2, false);
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+      ctx.fill();
+      ctx.closePath();
+    }
+
+    function drawText(x, y, text) {
+      ctx.fillStyle = 'black';
+      ctx.fillText(text, x + 15, y + 5);
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let point of _points) {
+        drawCircle(point.x, point.y);
+        if (point.value) {
+          drawText(point.x, point.y, point.value);
+        }
+      }
+      if (!isConfirmed) {
+        return;
+      }
+      applyColorsAndInterpolate();
+    }
+
+    function applyColorsAndInterpolate() {
+      _points.sort((a, b) => a.value - b.value);
+      const startColor = { r: 255, g: 0, b: 0 }; // 深红色  
+      const endColor = { r: 0, g: 0, b: 255 };  // 深蓝色  
+      const minValue = _points[0].value;
+      const maxValue = _points[_points.length - 1].value;
+      _points.forEach((point, index) => {
+        const normalizedValue = normalize(point.value, minValue, maxValue);
+        point.color = { r: 0, g: 0, b: 0 };
+        let rgb = lerpColor(startColor, endColor, normalizedValue);
+        point.color.r = rgb.r;
+        point.color.g = rgb.g;
+        point.color.b = rgb.b;
+        console.log(JSON.stringify(point.color));
+      });
+      // Interpolate colors using IDLW  
+      for (let y = 0; y < canvas.height; y++) {
+        for (let x = 0; x < canvas.width; x++) {
+          const color = inverseDistanceLogarithmicWeighting(x, y, _points);
+          ctx.fillStyle = `rgb(${color.r},${color.g},${color.b})`;
+          ctx.fillRect(x, y, 1, 1);
+        }
+      }
+    }
+
+    function hexToRgb(hex) {
+      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+      return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+      } : null;
+    }
+    function normalize(value, min, max) {
+      return (value - min) / (max - min);
+    }
+
+    function lerpColor(startColor, endColor, t) {
+      const r = Math.round(startColor.r + (endColor.r - startColor.r) * t);
+      const g = Math.round(startColor.g + (endColor.g - startColor.g) * t);
+      const b = Math.round(startColor.b + (endColor.b - startColor.b) * t);
+      return { r, g, b };
+    }
+
+    canvas.addEventListener('click', (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      _points.push({ x, y, value: null, color: null });
+      inputForm.style.display = 'block';
+      inputForm.style.left = `${x}px`;
+      inputForm.style.top = `${y}px`;
+      draw();
+    });
+
+    submitButton.addEventListener('click', () => {
+      const x = parseInt(inputForm.style.left);
+      const y = parseInt(inputForm.style.top);
+      const point = _points.find(p => p.x === x && p.y === y);
+      if (point) {
+        point.value = parseInt(inputValue.value);
+        inputForm.style.display = 'none';
+        draw();
+      }
+    });
+
+    confirmButton.addEventListener('click', () => {
+      isConfirmed = true;
+      draw();
+    });
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);  
   </script>
 </body>
 
