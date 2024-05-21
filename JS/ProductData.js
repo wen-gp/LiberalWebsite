@@ -312,8 +312,8 @@ let productCards = [
         },
         "product": {
             "name": "FEAM4F-0.5/CF-CON",
-            "remark": "Our magnetic balance is an ideal choice for handling harsh conditions.",
-            "description": "An optical linear encoder uses light (optics) to identify unique positions for the encoder, while a magnetic encoder uses the same principle to determine a position as an optical encoder, but it does it using magnetic fields rather than light.",
+            "remark": "More secure and convenient",
+            "description": "Our connectors are high-performance and highly reliable electrical connection devices widely used in industrial automation, mechanical equipment, power systems, and other fields. It can provide stable and safe electrical connections in harsh environments, ensuring the normal operation of various industrial equipment. Industrial connectors have characteristics such as waterproof, dustproof, and shockproof, which can meet the complex and ever-changing industrial application needs.",
             "features": [
                 {
                     "title": "Product attributes",
@@ -327,79 +327,369 @@ let productCards = [
             "parameters": [
                 {
                     "name": "product type",
-                    "value": "4.7V to 7V( The range of antipole and overvoltage protection:-20V-+20V)"
+                    "value": "Circular connector"
                 },
                 {
                     "name": "Number of poles",
-                    "value": "＜35mA"
+                    "value": "4"
                 },
                 {
                     "name": "type",
-                    "value": "RS422"
+                    "value": "Public end"
                 },
                 {
                     "name": "Connection Type",
-                    "value": "-10℃-+80℃"
+                    "value": "Scattered line type"
                 },
                 {
                     "name": "Anti-misplug coding",
-                    "value": "-40℃-+85℃"
+                    "value": "A-code"
                 },
                 {
                     "name": "joint angle",
-                    "value": "0.01mm,0.005mm,0.001mm"
+                    "value": "180°"
                 },
                 {
                     "name": "Rated voltage",
-                    "value": "±0.025mm/M"
+                    "value": "250V"
                 },
                 {
                     "name": "Rated current",
-                    "value": "1 pulse"
+                    "value": "4A"
                 },
                 {
                     "name": "Wire diameter",
-                    "value": "200M"
+                    "value": "22AWG"
                 },
                 {
                     "name": "Contact resistance",
-                    "value": "4.7V to 7V( The range of antipole and overvoltage protection:-20V-+20V)"
+                    "value": "≤5mΩ"
                 },
                 {
                     "name": "Insulation resistance",
-                    "value": "＜35mA"
+                    "value": "≥100MΩ"
                 },
                 {
                     "name": "pollution level",
-                    "value": "RS422"
+                    "value": "3"
                 },
                 {
-                    "name": "Connection Type",
-                    "value": "-10℃-+80℃"
+                    "name": "Contact material",
+                    "value": "copper"
                 },
                 {
-                    "name": "Anti-misplug coding",
-                    "value": "-40℃-+85℃"
+                    "name": "Surface material of contact parts",
+                    "value": "Gold plating"
                 },
                 {
-                    "name": "joint angle",
-                    "value": "0.01mm,0.005mm,0.001mm"
+                    "name": "Contact carrier material",
+                    "value": "Nylon+GF"
                 },
                 {
-                    "name": "Rated voltage",
-                    "value": "±0.025mm/M"
+                    "name": "Material of locking components",
+                    "value": "Die cast zinc nickel plating"
                 },
                 {
-                    "name": "Rated current",
-                    "value": "1 pulse"
+                    "name": "Shell material",
+                    "value": "Die cast zinc nickel plating"
                 },
                 {
-                    "name": "Wire diameter",
-                    "value": "200M"
+                    "name": "Shell color",
+                    "value": "Metallic color"
+                },
+                {
+                    "name": "Sealing material",
+                    "value": "FPM/FKM"
+                },
+                {
+                    "name": "Installation method",
+                    "value": "Front panel installation"
+                },
+                {
+                    "name": "Installation dimensions",
+                    "value": "PG9 thread"
+                },
+                {
+                    "name": "Insertion and removal times",
+                    "value": "≥100"
+                },
+                {
+                    "name": "Protection level",
+                    "value": "IP67"
+                },
+                {
+                    "name": "ambient temperature",
+                    "value": "-25°C~85°C"
+                },
+                {
+                    "name": "Insertion torque",
+                    "value": "3-4 Nm"
+                },
+                {
+                    "name": "standard",
+                    "value": "1076-2-101"
                 },
             ],
             "carouselChartImgPaths": [
                 "../Images/工业连接器-1.png",
+            ]
+        }
+    },
+    {
+        "tags": ["Industrial connectors", "id-4"],
+        "card": {
+            "imgPath": "../Images/工业连接器-2.png",
+            "name": "IOLD-PA-AIO8-VI",
+            "description": "",
+            "cardParameters": ["shell material:PA6 + GF", "weight:217g", "resolution:16 bit"]
+        },
+        "product": {
+            "name": "IOLD-PA-AIO8-VI",
+            "remark": "More secure and convenient",
+            "description": "Our connectors are high-performance and highly reliable electrical connection devices widely used in industrial automation, mechanical equipment, power systems, and other fields. It can provide stable and safe electrical connections in harsh environments, ensuring the normal operation of various industrial equipment. Industrial connectors have characteristics such as waterproof, dustproof, and shockproof, which can meet the complex and ever-changing industrial application needs.",
+            "features": [
+                {
+                    "title": "Product attributes",
+                    "items": [
+                        "IO LINK Slave Module",
+                        "8 x AIO ports",
+                        "IP67 protection level",
+                    ]
+                },
+            ],
+            "parameters": [
+                {
+                    "name": "shell material",
+                    "value": "PA6 + GF"
+                },
+                {
+                    "name": "Shell color",
+                    "value": "black"
+                },
+                {
+                    "name": "Protection level",
+                    "value": "IP67"
+                },
+                {
+                    "name": "Dimensions",
+                    "value": "155mm × 53mm ×28.7mm"
+                },
+                {
+                    "name": "weight",
+                    "value": "217g"
+                },
+                {
+                    "name": "operating temperature",
+                    "value": "-25℃~70℃"
+                },
+                {
+                    "name": "Storage/transport temperature	",
+                    "value": "-40℃~..85℃"
+                },
+                {
+                    "name": "Operating humidity",
+                    "value": "5%~95%"
+                },
+                {
+                    "name": "Storage/transport humidity",
+                    "value": "5%~95%"
+                },
+                {
+                    "name": "operating atmospheric pressure",
+                    "value": "80KPa~106KPa"
+                },
+                {
+                    "name": "Save/Transport Atmosphere",
+                    "value": "80KPa~106KPa"
+                },
+                {
+                    "name": "I/O port tightening torque",
+                    "value": "M12:0.5Nm"
+                },
+                {
+                    "name": "Application Environment",
+                    "value": "Complies with EN-61131"
+                },
+                {
+                    "name": "Vibration test",
+                    "value": "Gold plating"
+                },
+                {
+                    "name": "Contact carrier material",
+                    "value": "Comply with IEC60068-2"
+                },
+                {
+                    "name": "Impact test",
+                    "value": "Comply with IEC60068-27"
+                },
+                {
+                    "name": "Electromagnetic Compatibility (EMC)",
+                    "value": "Comply with IEC61000-4-2,-3,-4"
+                },
+                {
+                    "name": "Certification",
+                    "value": "CE, RoHS"
+                },
+                {
+                    "name": "Mounting hole specifications",
+                    "value": "Φ4.5mm × 2"
+                },
+                {
+                    "name": "Input and output quantity",
+                    "value": "Front panel installation"
+                },
+                {
+                    "name": "Installation dimensions",
+                    "value": "8 channels of current or voltage"
+                },
+                {
+                    "name": "Input and output port location",
+                    "value": "J1~J8"
+                },
+                {
+                    "name": "Sensor power supply",
+                    "value": "24VDC"
+                },
+                {
+                    "name": "resolution",
+                    "value": "16 bit"
+                },
+            ],
+            "carouselChartImgPaths": [
+                "../Images/工业连接器-2.png",
+            ]
+        }
+    },
+    {
+        "tags": ["Industrial connectors", "id-4"],
+        "card": {
+            "imgPath": "../Images/工业连接器-3.png",
+            "name": "EAPF4-2/C00/HBK",
+            "description": "",
+            "cardParameters": ["digit:4", "line type:Scattered line type", "Rated voltage:250V"]
+        },
+        "product": {
+            "name": "EAPF4-2/C00/HBK",
+            "remark": "More secure and convenient",
+            "description": "Our connectors are high-performance and highly reliable electrical connection devices widely used in industrial automation, mechanical equipment, power systems, and other fields. It can provide stable and safe electrical connections in harsh environments, ensuring the normal operation of various industrial equipment. Industrial connectors have characteristics such as waterproof, dustproof, and shockproof, which can meet the complex and ever-changing industrial application needs.",
+            "features": [
+                {
+                    "title": "Product attributes",
+                    "items": [
+                        "Circular connector",
+                        "Rated voltage:250V",
+                        "line type:Scattered line type",
+                    ]
+                },
+            ],
+            "parameters": [
+                {
+                    "name": "product type",
+                    "value": "Circular connector"
+                },
+                {
+                    "name": "Number of poles",
+                    "value": "4"
+                },
+                {
+                    "name": "type",
+                    "value": "Public end"
+                },
+                {
+                    "name": "Connection Type",
+                    "value": "Scattered line type"
+                },
+                {
+                    "name": "Anti-misplug coding",
+                    "value": "A-code"
+                },
+                {
+                    "name": "joint angle",
+                    "value": "180°"
+                },
+                {
+                    "name": "Rated voltage",
+                    "value": "250V"
+                },
+                {
+                    "name": "Rated current",
+                    "value": "4A"
+                },
+                {
+                    "name": "Wire diameter",
+                    "value": "22AWG"
+                },
+                {
+                    "name": "Contact resistance",
+                    "value": "≤5mΩ"
+                },
+                {
+                    "name": "Insulation resistance",
+                    "value": "≥100MΩ"
+                },
+                {
+                    "name": "pollution level",
+                    "value": "3"
+                },
+                {
+                    "name": "Contact material",
+                    "value": "copper"
+                },
+                {
+                    "name": "Surface material of contact parts",
+                    "value": "Gold plating"
+                },
+                {
+                    "name": "Contact carrier material",
+                    "value": "Nylon+GF"
+                },
+                {
+                    "name": "Material of locking components",
+                    "value": "Die cast zinc nickel plating"
+                },
+                {
+                    "name": "Shell material",
+                    "value": "Die cast zinc nickel plating"
+                },
+                {
+                    "name": "Shell color",
+                    "value": "Metallic color"
+                },
+                {
+                    "name": "Sealing material",
+                    "value": "FPM/FKM"
+                },
+                {
+                    "name": "Installation method",
+                    "value": "Front panel installation"
+                },
+                {
+                    "name": "Installation dimensions",
+                    "value": "PG9 thread"
+                },
+                {
+                    "name": "Insertion and removal times",
+                    "value": "≥100"
+                },
+                {
+                    "name": "Protection level",
+                    "value": "IP67"
+                },
+                {
+                    "name": "ambient temperature",
+                    "value": "-25°C~85°C"
+                },
+                {
+                    "name": "Insertion torque",
+                    "value": "3-4 Nm"
+                },
+                {
+                    "name": "standard",
+                    "value": "1076-2-101"
+                },
+            ],
+            "carouselChartImgPaths": [
+                "../Images/工业连接器-3.png",
             ]
         }
     },
